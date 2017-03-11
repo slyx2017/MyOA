@@ -1,0 +1,47 @@
+D:\MyProduct\WebImagesUpload\bin\DAL.dll
+D:\MyProduct\WebImagesUpload\bin\DAL.pdb
+D:\MyProduct\WebImagesUpload\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MyProduct\WebImagesUpload\DAL\obj\Debug\DAL.dll
+D:\MyProduct\WebImagesUpload\DAL\obj\Debug\DAL.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\bin\DAL.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\bin\DAL.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\obj\Debug\DAL.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\obj\Debug\DAL.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\DAL.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\DAL.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\Common.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\DBUtility.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\Model.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\MySql.Data.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\OpenSmtp.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\Excel.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\COM.Excel.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\IBatisNet.DataMapper.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\IBatisNet.Common.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\System.Data.SQLite.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\Common.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\DBUtility.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\DAL\bin\Model.pdb
+D:\MyProduct\ProductInventoryManagement\bin\DAL.dll
+D:\MyProduct\ProductInventoryManagement\bin\DAL.pdb
+D:\MVCOA\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.dll
+D:\MVCOA\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.pdb
+D:\MVCOA\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MVCOA\ProductInventoryManageMent\DAL\obj\Debug\DAL.dll
+D:\MVCOA\ProductInventoryManageMent\DAL\obj\Debug\DAL.pdb
+D:\MyWeb\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.dll
+D:\MyWeb\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.pdb
+D:\MyWeb\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MyWeb\ProductInventoryManageMent\DAL\obj\Debug\DAL.dll
+D:\MyWeb\ProductInventoryManageMent\DAL\obj\Debug\DAL.pdb
+D:\MyProduct\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.dll
+D:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.pdb
+D:\MyProduct\ProductInventoryManageMent\DAL\obj\Debug\DAL.dll
+D:\MyProduct\ProductInventoryManageMent\DAL\obj\Debug\DAL.pdb
+F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.dll
+F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\DAL.pdb
+F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.dll
+F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.pdb

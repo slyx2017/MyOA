@@ -1,0 +1,30 @@
+D:\MyProduct\WebImagesUpload\Model\bin\Debug\.Model.dll
+D:\MyProduct\WebImagesUpload\Model\bin\Debug\.Model.pdb
+D:\MyProduct\WebImagesUpload\WebImagesUpload\bin\Model.dll
+D:\MyProduct\WebImagesUpload\WebImagesUpload\bin\Model.pdb
+D:\MyProduct\WebImagesUpload\Model\obj\Debug\Model.dll
+D:\MyProduct\WebImagesUpload\Model\obj\Debug\Model.pdb
+D:\MyProduct\WebImagesUpload\bin\Model.dll
+D:\MyProduct\WebImagesUpload\bin\Model.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\bin\Model.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\bin\Model.pdb
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\Model\obj\Debug\Model.dll
+C:\Users\zhiyong\Documents\Visual Studio 2015\Projects\ProductInventoryManagement\Model\obj\Debug\Model.pdb
+D:\MyProduct\ProductInventoryManagement\bin\Model.dll
+D:\MyProduct\ProductInventoryManagement\bin\Model.pdb
+D:\MVCOA\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.dll
+D:\MVCOA\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
+D:\MVCOA\ProductInventoryManageMent\Model\obj\Debug\Model.dll
+D:\MVCOA\ProductInventoryManageMent\Model\obj\Debug\Model.pdb
+D:\MyWeb\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.dll
+D:\MyWeb\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
+D:\MyWeb\ProductInventoryManageMent\Model\obj\Debug\Model.dll
+D:\MyWeb\ProductInventoryManageMent\Model\obj\Debug\Model.pdb
+D:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.dll
+D:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
+D:\MyProduct\ProductInventoryManageMent\Model\obj\Debug\Model.dll
+D:\MyProduct\ProductInventoryManageMent\Model\obj\Debug\Model.pdb
+F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.dll
+F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
+F:\BaiduYunDownload\ProductInventoryManageMent\Model\obj\Debug\Model.dll
+F:\BaiduYunDownload\ProductInventoryManageMent\Model\obj\Debug\Model.pdb

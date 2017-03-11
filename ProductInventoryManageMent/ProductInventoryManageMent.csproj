@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53824868-7A0D-4316-B3E1-3D1E7996015B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProductInventoryManageMent</RootNamespace>
+    <AssemblyName>ProductInventoryManageMent</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Model, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Album\AddAlbum.aspx" />
+    <Content Include="Album\AddAlbumType.aspx" />
+    <Content Include="Album\AlbumPhotos.aspx" />
+    <Content Include="Album\BatchDownload.aspx" />
+    <Content Include="Album\DownPhoto.aspx" />
+    <Content Include="Album\ImageUpload.aspx" />
+    <Content Include="Album\ModifyAlbum.aspx" />
+    <Content Include="Album\MyAlbum.aspx" />
+    <Content Include="Album\PhotoDetail.aspx" />
+    <Content Include="Album\WebForm1.aspx" />
+    <Content Include="css\awesomeStyle\awesome.css" />
+    <Content Include="css\awesomeStyle\img\loading.gif" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\datestyle.css" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\metroStyle\img\line_conn.png" />
+    <Content Include="css\metroStyle\img\loading.gif" />
+    <Content Include="css\metroStyle\img\metro.gif" />
+    <Content Include="css\metroStyle\img\metro.png" />
+    <Content Include="css\metroStyle\metroStyle.css" />
+    <Content Include="css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="css\zTreeStyle\img\diy\2.png" />
+    <Content Include="css\zTreeStyle\img\diy\3.png" />
+    <Content Include="css\zTreeStyle\img\diy\4.png" />
+    <Content Include="css\zTreeStyle\img\diy\5.png" />
+    <Content Include="css\zTreeStyle\img\diy\6.png" />
+    <Content Include="css\zTreeStyle\img\diy\7.png" />
+    <Content Include="css\zTreeStyle\img\diy\8.png" />
+    <Content Include="css\zTreeStyle\img\diy\9.png" />
+    <Content Include="css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="css\zTreeStyle\img\loading.gif" />
+    <Content Include="css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="dist\css\bootstrap-theme.css" />
+    <Content Include="dist\css\bootstrap-theme.min.css" />
+    <Content Include="dist\css\bootstrap.css" />
+    <Content Include="dist\css\bootstrap.min.css" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="dist\js\bootstrap.js" />
+    <Content Include="dist\js\bootstrap.min.js" />
+    <Content Include="dist\js\npm.js" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\032f862b-09c1-4e4e-a5dc-77560875ee13.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\2c819e02-2cc0-4074-9b1e-5cfa21a74b31.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\902cc1e3-8f75-4c0f-a2bc-1d9ac10ba3ee.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\cd95d707-e17c-4034-9843-7bbac8859811.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\d85bb506-cc1b-40e6-9d5d-367ec137fdcf.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\e57d45b5-f491-40f2-aa39-a6ec3407902f.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\e855c177-e846-4e53-8a9f-d5dee4df63d2.jpg" />
+    <Content Include="Images\a30abf2a-3397-4d3c-9355-0034e9b3b024\f430a2ef-4c3c-4dbe-a157-ce5fb1070e92.jpg" />
+    <Content Include="img\171.png" />
+    <Content Include="img\20150212154319.jpg" />
+    <Content Include="img\btn_del.png" />
+    <Content Include="img\btn_down.png" />
+    <Content Include="img\btn_face.png" />
+    <Content Include="img\coverphoto.jpg" />
+    <Content Include="img\datePicker.gif" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\img_del.png" />
+    <Content Include="img\img_down.png" />
+    <Content Include="img\img_face.png" />
+    <Content Include="img\left.png" />
+    <Content Include="img\left2.png" />
+    <Content Include="img\left_bg.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\mainalbum.jpg" />
+    <Content Include="img\mainalbum1.jpg" />
+    <Content Include="img\select.png" />
+    <Content Include="img\Switch.png" />
+    <Content Include="img\Switch2.png" />
+    <Content Include="img\tita.png" />
+    <Content Include="img\top.png" />
+    <Content Include="Inventory\Products.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Clock.js" />
+    <Content Include="js\DatePicker\calendar.js" />
+    <Content Include="js\DatePicker\config.js" />
+    <Content Include="js\DatePicker\lang\zh-cn.js" />
+    <Content Include="js\DatePicker\My97DatePicker.htm" />
+    <Content Include="js\DatePicker\skin\default\datepicker.css" />
+    <Content Include="js\DatePicker\skin\default\img.gif" />
+    <Content Include="js\DatePicker\WdatePicker.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery.form.js" />
+    <Content Include="js\jquery.ztree.all.js" />
+    <Content Include="js\jquery.ztree.all.min.js" />
+    <Content Include="js\jquery.ztree.core.js" />
+    <Content Include="js\jquery.ztree.core.min.js" />
+    <Content Include="js\jquery.ztree.excheck.js" />
+    <Content Include="js\jquery.ztree.excheck.min.js" />
+    <Content Include="js\jquery.ztree.exedit.js" />
+    <Content Include="js\jquery.ztree.exedit.min.js" />
+    <Content Include="js\jquery.ztree.exhide.js" />
+    <Content Include="js\jquery.ztree.exhide.min.js" />
+    <Content Include="js\jquery1.9.0.min.js" />
+    <Content Include="js\laydate\laydate.js" />
+    <Content Include="js\laydate\need\laydate.css" />
+    <Content Include="js\laydate\skins\dahong\icon.png" />
+    <Content Include="js\laydate\skins\dahong\laydate.css" />
+    <Content Include="js\laydate\skins\danlan\icon.png" />
+    <Content Include="js\laydate\skins\danlan\laydate.css" />
+    <Content Include="js\laydate\skins\default\icon.png" />
+    <Content Include="js\laydate\skins\default\laydate.css" />
+    <Content Include="js\laydate\skins\molv\icon.png" />
+    <Content Include="js\laydate\skins\molv\laydate.css" />
+    <Content Include="js\laydate\skins\qianhuang\icon.png" />
+    <Content Include="js\laydate\skins\qianhuang\laydate.css" />
+    <Content Include="js\laydate\skins\yahui\icon.png" />
+    <Content Include="js\laydate\skins\yahui\laydate.css" />
+    <Content Include="js\laydate\skins\yalan\icon.png" />
+    <Content Include="js\laydate\skins\yalan\laydate.css" />
+    <Content Include="js\sdmenu.js" />
+    <Content Include="js\说明.txt" />
+    <Content Include="Login\Login.aspx" />
+    <Content Include="Login\NoPermission.aspx" />
+    <Content Include="Login\WebForm1.aspx" />
+    <Content Include="Menu\AddChildMenu.aspx" />
+    <Content Include="Menu\AddMenuBlock.aspx" />
+    <Content Include="Menu\EditChildMenu.aspx" />
+    <Content Include="Menu\EditMenuBlock.aspx" />
+    <Content Include="Menu\HomeConfig.aspx" />
+    <Content Include="Menu\MenuChild.aspx" />
+    <Content Include="Menu\MenuManagement.aspx" />
+    <Content Include="Menu\MenuPageList.aspx" />
+    <Content Include="Menu\ModifyChildMenu.aspx" />
+    <Content Include="Role\AddRole.aspx" />
+    <Content Include="Role\EditRole.aspx" />
+    <Content Include="Role\RoleList.aspx" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Sys\AddDept.aspx" />
+    <Content Include="Sys\AddHols.aspx" />
+    <Content Include="Sys\DeptList.aspx" />
+    <Content Include="Sys\Hols.aspx" />
+    <Content Include="User\EditUser.aspx" />
+    <Content Include="User\ModifyPwd.aspx" />
+    <Content Include="User\UserAdd.aspx" />
+    <Content Include="User\UserDetail.aspx" />
+    <Content Include="User\UserList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Album\AddAlbum.aspx.cs">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\AddAlbum.aspx.designer.cs">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\AddAlbumType.aspx.cs">
+      <DependentUpon>AddAlbumType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\AddAlbumType.aspx.designer.cs">
+      <DependentUpon>AddAlbumType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\AlbumPhotos.aspx.cs">
+      <DependentUpon>AlbumPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\AlbumPhotos.aspx.designer.cs">
+      <DependentUpon>AlbumPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\BatchDownload.aspx.cs">
+      <DependentUpon>BatchDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\BatchDownload.aspx.designer.cs">
+      <DependentUpon>BatchDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\DownPhoto.aspx.cs">
+      <DependentUpon>DownPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\DownPhoto.aspx.designer.cs">
+      <DependentUpon>DownPhoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\ImageUpload.aspx.cs">
+      <DependentUpon>ImageUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\ImageUpload.aspx.designer.cs">
+      <DependentUpon>ImageUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\ModifyAlbum.aspx.cs">
+      <DependentUpon>ModifyAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\ModifyAlbum.aspx.designer.cs">
+      <DependentUpon>ModifyAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\MyAlbum.aspx.cs">
+      <DependentUpon>MyAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\MyAlbum.aspx.designer.cs">
+      <DependentUpon>MyAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\PhotoDetail.aspx.cs">
+      <DependentUpon>PhotoDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\PhotoDetail.aspx.designer.cs">
+      <DependentUpon>PhotoDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Album\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Album\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\album.ashx.cs">
+      <DependentUpon>album.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\dept.ashx.cs">
+      <DependentUpon>dept.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\exit.ashx.cs">
+      <DependentUpon>exit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\leave.ashx.cs">
+      <DependentUpon>leave.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\login.ashx.cs">
+      <DependentUpon>login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\menu.ashx.cs">
+      <DependentUpon>menu.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\photo.ashx.cs">
+      <DependentUpon>photo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\user.ashx.cs">
+      <DependentUpon>user.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="comm\MyNameTransfom.cs" />
+    <Compile Include="comm\PageValidatePermiss.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\NoPermission.aspx.cs">
+      <DependentUpon>NoPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\AddChildMenu.aspx.cs">
+      <DependentUpon>AddChildMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\AddChildMenu.aspx.designer.cs">
+      <DependentUpon>AddChildMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\AddMenuBlock.aspx.cs">
+      <DependentUpon>AddMenuBlock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\AddMenuBlock.aspx.designer.cs">
+      <DependentUpon>AddMenuBlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EditChildMenu.aspx.cs">
+      <DependentUpon>EditChildMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\EditChildMenu.aspx.designer.cs">
+      <DependentUpon>EditChildMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EditMenuBlock.aspx.cs">
+      <DependentUpon>EditMenuBlock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\EditMenuBlock.aspx.designer.cs">
+      <DependentUpon>EditMenuBlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\HomeConfig.aspx.cs">
+      <DependentUpon>HomeConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\HomeConfig.aspx.designer.cs">
+      <DependentUpon>HomeConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\MenuChild.aspx.cs">
+      <DependentUpon>MenuChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuChild.aspx.designer.cs">
+      <DependentUpon>MenuChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\MenuManagement.aspx.cs">
+      <DependentUpon>MenuManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuManagement.aspx.designer.cs">
+      <DependentUpon>MenuManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\MenuPageList.aspx.cs">
+      <DependentUpon>MenuPageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuPageList.aspx.designer.cs">
+      <DependentUpon>MenuPageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\ModifyChildMenu.aspx.cs">
+      <DependentUpon>ModifyChildMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\ModifyChildMenu.aspx.designer.cs">
+      <DependentUpon>ModifyChildMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role\AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\EditRole.aspx.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\EditRole.aspx.designer.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\RoleList.aspx.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleList.aspx.designer.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\AddDept.aspx.cs">
+      <DependentUpon>AddDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\AddDept.aspx.designer.cs">
+      <DependentUpon>AddDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\AddHols.aspx.cs">
+      <DependentUpon>AddHols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\AddHols.aspx.designer.cs">
+      <DependentUpon>AddHols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\DeptList.aspx.cs">
+      <DependentUpon>DeptList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\DeptList.aspx.designer.cs">
+      <DependentUpon>DeptList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Hols.aspx.cs">
+      <DependentUpon>Hols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Hols.aspx.designer.cs">
+      <DependentUpon>Hols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ModifyPwd.aspx.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ModifyPwd.aspx.designer.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserAdd.aspx.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserAdd.aspx.designer.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserDetail.aspx.designer.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebDefault.Master.cs">
+      <DependentUpon>WebDefault.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebDefault.Master.designer.cs">
+      <DependentUpon>WebDefault.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="ashx\album.ashx" />
+    <Content Include="ashx\exit.ashx" />
+    <Content Include="ashx\login.ashx" />
+    <Content Include="ashx\menu.ashx" />
+    <Content Include="ashx\photo.ashx" />
+    <Content Include="ashx\user.ashx" />
+    <Content Include="ashx\leave.ashx" />
+    <Content Include="ashx\dept.ashx" />
+    <None Include="css\awesomeStyle\awesome.less" />
+    <None Include="css\awesomeStyle\fa.less" />
+    <None Include="dist\css\bootstrap-theme.css.map" />
+    <None Include="dist\css\bootstrap.css.map" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="js\DatePicker\lang\vssver2.scc" />
+    <None Include="js\DatePicker\skin\default\vssver2.scc" />
+    <None Include="js\DatePicker\vssver2.scc" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="WebDefault.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3211</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
