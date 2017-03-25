@@ -13,8 +13,22 @@ namespace DAL
 	{
 		public Users()
 		{}
-		#region  BasicMethod
+        #region  BasicMethod
+        /// <summary>
+        /// 是否存在该记录
+        /// </summary>
+        public bool Exists(string name)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from Users");
+            strSql.Append(" where uLoginName=@uLoginName");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@uLoginName", SqlDbType.NVarChar,50)
+            };
+            parameters[0].Value = name;
 
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
         /// <summary>
 		/// 增加一条数据
 		/// </summary>
