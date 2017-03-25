@@ -7,8 +7,8 @@ namespace ProductInventoryManagement.Role
 {
     public partial class AddRole : PageValidatePermiss
     {
-        BLL.Sys_Menu bll_m = new BLL.Sys_Menu();
-        BLL.Sys_RoleInfo bll_ri = new BLL.Sys_RoleInfo();
+        BLL.Sys_MenuBLL bll_m = new BLL.Sys_MenuBLL();
+        BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isSessionNull = SessionIsNull();

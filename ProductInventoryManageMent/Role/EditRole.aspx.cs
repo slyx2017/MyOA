@@ -7,8 +7,8 @@ namespace ProductInventoryManagement.Role
 {
     public partial class EditRole : PageValidatePermiss
     {
-        BLL.Sys_Menu bll_m = new BLL.Sys_Menu();
-        BLL.Sys_RoleInfo bll_ri = new BLL.Sys_RoleInfo();
+        BLL.Sys_MenuBLL bll_m = new BLL.Sys_MenuBLL();
+        BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isSessionNull = SessionIsNull();
@@ -96,7 +96,7 @@ namespace ProductInventoryManagement.Role
             this.txtRoleName.Text = model_ri.RoleName;
             int rid = -1;
             string strWhere = " RoleID=" + roleID + "";
-            BLL.Sys_RoleMenuMapping bll_rmm = new BLL.Sys_RoleMenuMapping();
+            BLL.Sys_RoleMenuMappingBLL bll_rmm = new BLL.Sys_RoleMenuMappingBLL();
             DataSet ds = bll_rmm.GetRoleList(strWhere, rid);
 
             if (ds.Tables[0].Rows.Count > 0)

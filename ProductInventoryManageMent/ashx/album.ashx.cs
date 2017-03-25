@@ -12,8 +12,8 @@ namespace ProductInventoryManagement.ashx
     /// </summary>
     public class album : IHttpHandler,IRequiresSessionState
     {
-        BLL.AlbumTypes bll_at = new BLL.AlbumTypes();
-        BLL.Albums bll_a = new BLL.Albums();
+        BLL.AlbumTypesBLL bll_at = new BLL.AlbumTypesBLL();
+        BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
 
         Model.AlbumTypes model_at = new Model.AlbumTypes();
         Model.Albums model_a = new Model.Albums();

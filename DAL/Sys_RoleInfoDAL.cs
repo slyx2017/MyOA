@@ -8,9 +8,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:Sys_RoleInfo
 	/// </summary>
-	public partial class Sys_RoleInfo
+	public partial class Sys_RoleInfoDAL
 	{
-		public Sys_RoleInfo()
+		public Sys_RoleInfoDAL()
 		{}
 		#region  BasicMethod
 

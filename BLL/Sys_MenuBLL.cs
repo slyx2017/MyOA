@@ -7,10 +7,10 @@ namespace BLL
     /// <summary>
     /// Sys_Menu
     /// </summary>
-    public partial class Sys_Menu
+    public partial class Sys_MenuBLL
     {
-        private readonly DAL.Sys_Menu dal = new DAL.Sys_Menu();
-        public Sys_Menu()
+        private readonly DAL.Sys_MenuDAL dal = new DAL.Sys_MenuDAL();
+        public Sys_MenuBLL()
         { }
         #region  BasicMethod
 

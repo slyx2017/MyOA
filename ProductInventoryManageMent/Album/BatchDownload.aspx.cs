@@ -14,6 +14,7 @@ namespace ProductInventoryManagement.Album
 {
     public partial class BatchDownload : PageValidatePermiss
     {
+        BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         int albumid = 0;
         string albumpath = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -77,7 +78,6 @@ namespace ProductInventoryManagement.Album
         string strWhere = "";
         public void GetAlbumDB()
         {
-            BLL.Albums bll_a = new BLL.Albums();
             strWhere = "AlbumId=" + albumid + "";
             DataSet ds = bll_a.GetList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)

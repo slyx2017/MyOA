@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
+using Model;
 namespace BLL
 {
-    /// <summary>
-    /// Photos
-    /// </summary>
-    public partial class Photos
+	/// <summary>
+	/// Web_Images
+	/// </summary>
+	public partial class Web_ImagesBLL
 	{
-		private readonly DAL.Photos dal=new DAL.Photos();
-		public Photos()
+		private readonly DAL.Web_ImagesDAL dal=new DAL.Web_ImagesDAL();
+		public Web_ImagesBLL()
 		{}
 		#region  BasicMethod
 
@@ -24,15 +25,15 @@ namespace BLL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(int PhotoId)
+		public bool Exists(int Id)
 		{
-			return dal.Exists(PhotoId);
+			return dal.Exists(Id);
 		}
 
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Model.Photos model)
+		public int  Add(Model.Web_Images model)
 		{
 			return dal.Add(model);
 		}
@@ -40,7 +41,7 @@ namespace BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Photos model)
+		public bool Update(Model.Web_Images model)
 		{
 			return dal.Update(model);
 		}
@@ -48,57 +49,26 @@ namespace BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int PhotoId)
+		public bool Delete(int Id)
 		{
 			
-			return dal.Delete(PhotoId);
+			return dal.Delete(Id);
 		}
-        /// <summary>
-        /// 删除照片
-        /// </summary>
-        public int DeletePhoto(int PhotoId,int isface)
-        {
-            return dal.DeletePhoto(PhotoId, isface);
-        }
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool DeleteList(string PhotoIdlist )
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public bool DeleteList(string Idlist )
 		{
-			return dal.DeleteList(PhotoIdlist );
+			return dal.DeleteList(Idlist );
 		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Photos GetModel(int PhotoId)
+		public Model.Web_Images GetModel(int Id)
 		{
 			
-			return dal.GetModel(PhotoId);
-		}
-
-		/// <summary>
-		/// 得到一个对象实体，从缓存中
-		/// </summary>
-		public Model.Photos GetModelByCache(int PhotoId)
-		{
-			
-			string CacheKey = "PhotosModel-" + PhotoId;
-			object objModel = Common.DataCache.GetCache(CacheKey);
-			if (objModel == null)
-			{
-				try
-				{
-					objModel = dal.GetModel(PhotoId);
-					if (objModel != null)
-					{
-						int ModelCache = Common.ConfigHelper.GetConfigInt("ModelCache");
-						Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(ModelCache), TimeSpan.Zero);
-					}
-				}
-				catch{}
-			}
-			return (Model.Photos)objModel;
+			return dal.GetModel(Id);
 		}
 
 		/// <summary>
@@ -118,7 +88,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Photos> GetModelList(string strWhere)
+		public List<Model.Web_Images> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -126,13 +96,13 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Photos> DataTableToList(DataTable dt)
+		public List<Model.Web_Images> DataTableToList(DataTable dt)
 		{
-			List<Model.Photos> modelList = new List<Model.Photos>();
+			List<Model.Web_Images> modelList = new List<Model.Web_Images>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.Photos model;
+				Model.Web_Images model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

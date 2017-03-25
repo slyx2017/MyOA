@@ -8,10 +8,10 @@ namespace BLL
     /// <summary>
     /// Users
     /// </summary>
-    public partial class Users
+    public partial class UsersBLL
     {
-        private readonly DAL.Users dal = new DAL.Users();
-        public Users()
+        private readonly DAL.UsersDAL dal = new DAL.UsersDAL();
+        public UsersBLL()
         { }
 
         #region  BasicMethod

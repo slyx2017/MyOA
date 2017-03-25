@@ -14,8 +14,9 @@ namespace ProductInventoryManagement.Album
         public int albumid = 0;
         public string albumname = "";
         public string albumtypename = "";
-        public static Model.Albums model_a = null;
-        
+        public static Model.Albums model_a = new Model.Albums();
+        BLL.AlbumTypesBLL bll_pl = new BLL.AlbumTypesBLL();
+        BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isSessionNull = SessionIsNull();
@@ -55,8 +56,6 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public void GetInfoDS()
         {
-            BLL.Albums bll_a = new BLL.Albums();
-            model_a = new Model.Albums();
             DataSet ds = bll_a.GetAlbumList("",albumid);
             if (ds.Tables[0].Rows.Count>0)
             {
@@ -73,7 +72,6 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public DataSet GetAlbumTypeList()
         {
-            BLL.AlbumTypes bll_pl = new BLL.AlbumTypes();
             DataSet ds = bll_pl.GetAlbumType();
             if (ds.Tables[0].Rows.Count > 0)
             {

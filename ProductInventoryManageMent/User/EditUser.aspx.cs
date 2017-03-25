@@ -77,7 +77,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public void GetUserModel()
         {
-            BLL.Users bll_u = new BLL.Users();
+            BLL.UsersBLL bll_u = new BLL.UsersBLL();
             model_u = new Model.Users();
             model_u = bll_u.GetModel(uid);
             birthday.Value = model_u.Birthday == null ? "" : model_u.Birthday.ToString().Split(' ')[0];
@@ -91,7 +91,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public DataSet GetPowerLevel()
         {
-            BLL.Sys_PowerLevel bll_pl = new BLL.Sys_PowerLevel();
+            BLL.Sys_PowerLevelBLL bll_pl = new BLL.Sys_PowerLevelBLL();
             DataSet ds = bll_pl.GetPowerLevelList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -121,7 +121,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public DataSet GetRoleList()
         {
-            BLL.Sys_RoleInfo bll_ri = new BLL.Sys_RoleInfo();
+            BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();
             int rid = 0; //0.查询角色表; -1.查询角色菜单映射表
             strWhere = "";
             DataSet ds = bll_ri.GetRoleList(strWhere, rid);

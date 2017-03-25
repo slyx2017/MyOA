@@ -40,7 +40,7 @@ namespace ProductInventoryManagement.Role
         /// <returns></returns>
         public DataSet GetInfoDS()
         {
-            BLL.Sys_RoleInfo bll_ri = new BLL.Sys_RoleInfo();
+            BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();
             int roleId = int.Parse(Session["RoleID"].ToString());
             //strWhere = " RoleID="+roleId+"";
             DataSet ds = new DataSet();

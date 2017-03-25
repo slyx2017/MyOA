@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace BLL
 {
     /// <summary>
-    /// AlbumTypes
+    /// Photos
     /// </summary>
-    public partial class AlbumTypes
+    public partial class PhotosBLL
 	{
-		private readonly DAL.AlbumTypes dal=new DAL.AlbumTypes();
-		public AlbumTypes()
+		private readonly DAL.PhotosDAL dal=new DAL.PhotosDAL();
+		public PhotosBLL()
 		{}
 		#region  BasicMethod
 
@@ -24,29 +24,23 @@ namespace BLL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(int AlbumTypeId)
+		public bool Exists(int PhotoId)
 		{
-			return dal.Exists(AlbumTypeId);
+			return dal.Exists(PhotoId);
 		}
 
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Model.AlbumTypes model)
+		public int  Add(Model.Photos model)
 		{
 			return dal.Add(model);
 		}
-        /// <summary>
-        /// 增加一条数据
-        /// </summary>
-        public int AddAlbumType(Model.AlbumTypes model)
-        {
-            return dal.AddAlbumType(model);
-        }
-        /// <summary>
-        /// 更新一条数据
-        /// </summary>
-        public bool Update(Model.AlbumTypes model)
+
+		/// <summary>
+		/// 更新一条数据
+		/// </summary>
+		public bool Update(Model.Photos model)
 		{
 			return dal.Update(model);
 		}
@@ -54,41 +48,48 @@ namespace BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int AlbumTypeId)
+		public bool Delete(int PhotoId)
 		{
 			
-			return dal.Delete(AlbumTypeId);
+			return dal.Delete(PhotoId);
 		}
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		public bool DeleteList(string AlbumTypeIdlist )
+        /// <summary>
+        /// 删除照片
+        /// </summary>
+        public int DeletePhoto(int PhotoId,int isface)
+        {
+            return dal.DeletePhoto(PhotoId, isface);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteList(string PhotoIdlist )
 		{
-			return dal.DeleteList(AlbumTypeIdlist );
+			return dal.DeleteList(PhotoIdlist );
 		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.AlbumTypes GetModel(int AlbumTypeId)
+		public Model.Photos GetModel(int PhotoId)
 		{
 			
-			return dal.GetModel(AlbumTypeId);
+			return dal.GetModel(PhotoId);
 		}
 
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Model.AlbumTypes GetModelByCache(int AlbumTypeId)
+		public Model.Photos GetModelByCache(int PhotoId)
 		{
 			
-			string CacheKey = "AlbumTypesModel-" + AlbumTypeId;
+			string CacheKey = "PhotosModel-" + PhotoId;
 			object objModel = Common.DataCache.GetCache(CacheKey);
 			if (objModel == null)
 			{
 				try
 				{
-					objModel = dal.GetModel(AlbumTypeId);
+					objModel = dal.GetModel(PhotoId);
 					if (objModel != null)
 					{
 						int ModelCache = Common.ConfigHelper.GetConfigInt("ModelCache");
@@ -97,7 +98,7 @@ namespace BLL
 				}
 				catch{}
 			}
-			return (Model.AlbumTypes)objModel;
+			return (Model.Photos)objModel;
 		}
 
 		/// <summary>
@@ -107,24 +108,17 @@ namespace BLL
 		{
 			return dal.GetList(strWhere);
 		}
-        /// <summary>
-		/// 获得相册类别列表
+		/// <summary>
+		/// 获得前几行数据
 		/// </summary>
-		public DataSet GetAlbumType()
-        {
-            return dal.GetAlbumType();
-        }
-        /// <summary>
-        /// 获得前几行数据
-        /// </summary>
-        public DataSet GetList(int Top,string strWhere,string filedOrder)
+		public DataSet GetList(int Top,string strWhere,string filedOrder)
 		{
 			return dal.GetList(Top,strWhere,filedOrder);
 		}
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.AlbumTypes> GetModelList(string strWhere)
+		public List<Model.Photos> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -132,13 +126,13 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.AlbumTypes> DataTableToList(DataTable dt)
+		public List<Model.Photos> DataTableToList(DataTable dt)
 		{
-			List<Model.AlbumTypes> modelList = new List<Model.AlbumTypes>();
+			List<Model.Photos> modelList = new List<Model.Photos>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.AlbumTypes model;
+				Model.Photos model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

@@ -8,10 +8,10 @@ namespace BLL
 	/// <summary>
 	/// Sys_UserRoleMapping
 	/// </summary>
-	public partial class Sys_UserRoleMapping
+	public partial class Sys_UserRoleMappingBLL
 	{
-		private readonly DAL.Sys_UserRoleMapping dal=new DAL.Sys_UserRoleMapping();
-		public Sys_UserRoleMapping()
+		private readonly DAL.Sys_UserRoleMappingDAL dal=new DAL.Sys_UserRoleMappingDAL();
+		public Sys_UserRoleMappingBLL()
 		{}
 		#region  BasicMethod
 

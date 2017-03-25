@@ -11,6 +11,7 @@ namespace ProductInventoryManagement.Album
 {
     public partial class ImageUpload : PageValidatePermiss
     {
+        BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         public int albumid = 0;
         public string albumname = "";
         public string coverphotopath = "";
@@ -44,7 +45,6 @@ namespace ProductInventoryManagement.Album
         }
         public void GetAlbumDB()
         {
-            BLL.Albums bll_a = new BLL.Albums();
             strWhere = "AlbumId=" + albumid + "";
             DataSet ds = bll_a.GetList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)

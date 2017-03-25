@@ -1,32 +1,52 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
-using Common;
-using Model;
 namespace BLL
 {
-	/// <summary>
-	/// Sys_RoleMenuMapping
-	/// </summary>
-	public partial class Sys_RoleMenuMapping
+    /// <summary>
+    /// AlbumTypes
+    /// </summary>
+    public partial class AlbumTypesBLL
 	{
-		private readonly DAL.Sys_RoleMenuMapping dal=new DAL.Sys_RoleMenuMapping();
-		public Sys_RoleMenuMapping()
+		private readonly DAL.AlbumTypesDAL dal=new DAL.AlbumTypesDAL();
+		public AlbumTypesBLL()
 		{}
 		#region  BasicMethod
 
 		/// <summary>
-		/// 增加一条数据
+		/// 得到最大ID
 		/// </summary>
-		public bool Add(Model.Sys_RoleMenuMapping model)
+		public int GetMaxId()
 		{
-			return dal.Add(model);
+			return dal.GetMaxId();
 		}
 
 		/// <summary>
-		/// 更新一条数据
+		/// 是否存在该记录
 		/// </summary>
-		public bool Update(Model.Sys_RoleMenuMapping model)
+		public bool Exists(int AlbumTypeId)
+		{
+			return dal.Exists(AlbumTypeId);
+		}
+
+		/// <summary>
+		/// 增加一条数据
+		/// </summary>
+		public int  Add(Model.AlbumTypes model)
+		{
+			return dal.Add(model);
+		}
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public int AddAlbumType(Model.AlbumTypes model)
+        {
+            return dal.AddAlbumType(model);
+        }
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(Model.AlbumTypes model)
 		{
 			return dal.Update(model);
 		}
@@ -34,34 +54,41 @@ namespace BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete()
+		public bool Delete(int AlbumTypeId)
 		{
-			//该表无主键信息，请自定义主键/条件字段
-			return dal.Delete();
+			
+			return dal.Delete(AlbumTypeId);
+		}
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public bool DeleteList(string AlbumTypeIdlist )
+		{
+			return dal.DeleteList(AlbumTypeIdlist );
 		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Sys_RoleMenuMapping GetModel()
+		public Model.AlbumTypes GetModel(int AlbumTypeId)
 		{
-			//该表无主键信息，请自定义主键/条件字段
-			return dal.GetModel();
+			
+			return dal.GetModel(AlbumTypeId);
 		}
 
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Model.Sys_RoleMenuMapping GetModelByCache()
+		public Model.AlbumTypes GetModelByCache(int AlbumTypeId)
 		{
-			//该表无主键信息，请自定义主键/条件字段
-			string CacheKey = "Sys_RoleMenuMappingModel-" ;
+			
+			string CacheKey = "AlbumTypesModel-" + AlbumTypeId;
 			object objModel = Common.DataCache.GetCache(CacheKey);
 			if (objModel == null)
 			{
 				try
 				{
-					objModel = dal.GetModel();
+					objModel = dal.GetModel(AlbumTypeId);
 					if (objModel != null)
 					{
 						int ModelCache = Common.ConfigHelper.GetConfigInt("ModelCache");
@@ -70,7 +97,7 @@ namespace BLL
 				}
 				catch{}
 			}
-			return (Model.Sys_RoleMenuMapping)objModel;
+			return (Model.AlbumTypes)objModel;
 		}
 
 		/// <summary>
@@ -81,21 +108,11 @@ namespace BLL
 			return dal.GetList(strWhere);
 		}
         /// <summary>
-		/// 获得页面地址
+		/// 获得相册类别列表
 		/// </summary>
-		public DataSet GetPagePath(int roleId)
+		public DataSet GetAlbumType()
         {
-            return dal.GetPagePath(roleId);
-        }
-        /// <summary>
-        /// 获得角色列表 "roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表
-        /// </summary>
-        /// <param name="strWhere"></param>
-        /// <param name="roleId">"roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表</param>
-        /// <returns></returns>
-        public DataSet GetRoleList(string strWhere, int roleId)
-        {
-            return dal.GetRoleList(strWhere, roleId);
+            return dal.GetAlbumType();
         }
         /// <summary>
         /// 获得前几行数据
@@ -107,7 +124,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Sys_RoleMenuMapping> GetModelList(string strWhere)
+		public List<Model.AlbumTypes> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -115,13 +132,13 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Sys_RoleMenuMapping> DataTableToList(DataTable dt)
+		public List<Model.AlbumTypes> DataTableToList(DataTable dt)
 		{
-			List<Model.Sys_RoleMenuMapping> modelList = new List<Model.Sys_RoleMenuMapping>();
+			List<Model.AlbumTypes> modelList = new List<Model.AlbumTypes>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.Sys_RoleMenuMapping model;
+				Model.AlbumTypes model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

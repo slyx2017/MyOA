@@ -9,9 +9,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:Users
 	/// </summary>
-	public partial class Users
+	public partial class UsersDAL
 	{
-		public Users()
+		public UsersDAL()
 		{}
         #region  BasicMethod
         /// <summary>

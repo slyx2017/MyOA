@@ -6,10 +6,10 @@ namespace BLL
     /// <summary>
     /// Albums
     /// </summary>
-    public partial class Albums
+    public partial class AlbumsBLL
 	{
-		private readonly DAL.Albums dal=new DAL.Albums();
-		public Albums()
+		private readonly DAL.AlbumsDAL dal=new DAL.AlbumsDAL();
+		public AlbumsBLL()
 		{}
 		#region  BasicMethod
         /// <summary>

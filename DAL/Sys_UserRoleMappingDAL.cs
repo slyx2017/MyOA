@@ -6,11 +6,11 @@ using DBUtility;//Please add references
 namespace DAL
 {
 	/// <summary>
-	/// 数据访问类:Sys_RoleMenuMapping
+	/// 数据访问类:Sys_UserRoleMapping
 	/// </summary>
-	public partial class Sys_RoleMenuMapping
+	public partial class Sys_UserRoleMappingDAL
 	{
-		public Sys_RoleMenuMapping()
+		public Sys_UserRoleMappingDAL()
 		{}
 		#region  BasicMethod
 
@@ -19,20 +19,18 @@ namespace DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(Model.Sys_RoleMenuMapping model)
+		public bool Add(Model.Sys_UserRoleMapping model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("insert into Sys_RoleMenuMapping(");
-			strSql.Append("RoleID,MenuID,MenuCode)");
+			strSql.Append("insert into Sys_UserRoleMapping(");
+			strSql.Append("UserID,RoleID)");
 			strSql.Append(" values (");
-			strSql.Append("@RoleID,@MenuID,@MenuCode)");
+			strSql.Append("@UserID,@RoleID)");
 			SqlParameter[] parameters = {
-					new SqlParameter("@RoleID", SqlDbType.Int,4),
-					new SqlParameter("@MenuID", SqlDbType.Int,4),
-					new SqlParameter("@MenuCode", SqlDbType.Int,4)};
-			parameters[0].Value = model.RoleID;
-			parameters[1].Value = model.MenuID;
-			parameters[2].Value = model.MenuCode;
+					new SqlParameter("@UserID", SqlDbType.Int,4),
+					new SqlParameter("@RoleID", SqlDbType.Int,4)};
+			parameters[0].Value = model.UserID;
+			parameters[1].Value = model.RoleID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -47,21 +45,18 @@ namespace DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Sys_RoleMenuMapping model)
+		public bool Update(Model.Sys_UserRoleMapping model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update Sys_RoleMenuMapping set ");
-			strSql.Append("RoleID=@RoleID,");
-			strSql.Append("MenuID=@MenuID,");
-			strSql.Append("MenuCode=@MenuCode");
+			strSql.Append("update Sys_UserRoleMapping set ");
+			strSql.Append("UserID=@UserID,");
+			strSql.Append("RoleID=@RoleID");
 			strSql.Append(" where ");
 			SqlParameter[] parameters = {
-					new SqlParameter("@RoleID", SqlDbType.Int,4),
-					new SqlParameter("@MenuID", SqlDbType.Int,4),
-					new SqlParameter("@MenuCode", SqlDbType.Int,4)};
-			parameters[0].Value = model.RoleID;
-			parameters[1].Value = model.MenuID;
-			parameters[2].Value = model.MenuCode;
+					new SqlParameter("@UserID", SqlDbType.Int,4),
+					new SqlParameter("@RoleID", SqlDbType.Int,4)};
+			parameters[0].Value = model.UserID;
+			parameters[1].Value = model.RoleID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -81,7 +76,7 @@ namespace DAL
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from Sys_RoleMenuMapping ");
+			strSql.Append("delete from Sys_UserRoleMapping ");
 			strSql.Append(" where ");
 			SqlParameter[] parameters = {
 			};
@@ -101,16 +96,16 @@ namespace DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Sys_RoleMenuMapping GetModel()
+		public Model.Sys_UserRoleMapping GetModel()
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 RoleID,MenuID,MenuCode from Sys_RoleMenuMapping ");
+			strSql.Append("select  top 1 UserID,RoleID from Sys_UserRoleMapping ");
 			strSql.Append(" where ");
 			SqlParameter[] parameters = {
 			};
 
-			Model.Sys_RoleMenuMapping model=new Model.Sys_RoleMenuMapping();
+			Model.Sys_UserRoleMapping model=new Model.Sys_UserRoleMapping();
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
@@ -126,22 +121,18 @@ namespace DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Sys_RoleMenuMapping DataRowToModel(DataRow row)
+		public Model.Sys_UserRoleMapping DataRowToModel(DataRow row)
 		{
-			Model.Sys_RoleMenuMapping model=new Model.Sys_RoleMenuMapping();
+			Model.Sys_UserRoleMapping model=new Model.Sys_UserRoleMapping();
 			if (row != null)
 			{
+				if(row["UserID"]!=null && row["UserID"].ToString()!="")
+				{
+					model.UserID=int.Parse(row["UserID"].ToString());
+				}
 				if(row["RoleID"]!=null && row["RoleID"].ToString()!="")
 				{
 					model.RoleID=int.Parse(row["RoleID"].ToString());
-				}
-				if(row["MenuID"]!=null && row["MenuID"].ToString()!="")
-				{
-					model.MenuID=int.Parse(row["MenuID"].ToString());
-				}
-				if(row["MenuCode"]!=null && row["MenuCode"].ToString()!="")
-				{
-					model.MenuCode=int.Parse(row["MenuCode"].ToString());
 				}
 			}
 			return model;
@@ -153,8 +144,8 @@ namespace DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select RoleID,MenuID,MenuCode ");
-			strSql.Append(" FROM Sys_RoleMenuMapping ");
+			strSql.Append("select UserID,RoleID ");
+			strSql.Append(" FROM Sys_UserRoleMapping ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -162,37 +153,10 @@ namespace DAL
 			return DbHelperSQL.Query(strSql.ToString());
 		}
 
-        /// <summary>
-        /// 获得数据列表
-        /// </summary>
-        public DataSet GetPagePath(int roleId)
-        {
-            SqlParameter[] parameters = {
-                    new SqlParameter("@RoleID", SqlDbType.Int,4)
-                    };
-            parameters[0].Value = roleId;
-            return DbHelperSQL.RunProcedure("GetPagePath", parameters, "ds");
-        }
-        /// <summary>
-        /// 获得角色列表 "roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表
-        /// </summary>
-        /// <param name="strWhere"></param>
-        /// <param name="roleId">"roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表</param>
-        /// <returns></returns>
-        public DataSet GetRoleList(string strWhere, int roleId)
-        {
-            SqlParameter[] parameters = {
-                    new SqlParameter("@strWhere", SqlDbType.NVarChar,1000),
-                    new SqlParameter("@RoleID", SqlDbType.Int,4)
-                    };
-            parameters[0].Value = strWhere;
-            parameters[1].Value = roleId;
-            return DbHelperSQL.RunProcedure("GetRoleList", parameters, "ds");
-        }
-        /// <summary>
-        /// 获得前几行数据
-        /// </summary>
-        public DataSet GetList(int Top,string strWhere,string filedOrder)
+		/// <summary>
+		/// 获得前几行数据
+		/// </summary>
+		public DataSet GetList(int Top,string strWhere,string filedOrder)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select ");
@@ -200,8 +164,8 @@ namespace DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" RoleID,MenuID,MenuCode ");
-			strSql.Append(" FROM Sys_RoleMenuMapping ");
+			strSql.Append(" UserID,RoleID ");
+			strSql.Append(" FROM Sys_UserRoleMapping ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -216,7 +180,7 @@ namespace DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM Sys_RoleMenuMapping ");
+			strSql.Append("select count(1) FROM Sys_UserRoleMapping ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -247,7 +211,7 @@ namespace DAL
 			{
 				strSql.Append("order by T.RoleID desc");
 			}
-			strSql.Append(")AS Row, T.*  from Sys_RoleMenuMapping T ");
+			strSql.Append(")AS Row, T.*  from Sys_UserRoleMapping T ");
 			if (!string.IsNullOrEmpty(strWhere.Trim()))
 			{
 				strSql.Append(" WHERE " + strWhere);
@@ -272,7 +236,7 @@ namespace DAL
 					new SqlParameter("@OrderType", SqlDbType.Bit),
 					new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
 					};
-			parameters[0].Value = "Sys_RoleMenuMapping";
+			parameters[0].Value = "Sys_UserRoleMapping";
 			parameters[1].Value = "RoleID";
 			parameters[2].Value = PageSize;
 			parameters[3].Value = PageIndex;

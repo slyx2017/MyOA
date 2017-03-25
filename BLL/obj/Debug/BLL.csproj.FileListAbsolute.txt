@@ -63,3 +63,7 @@ F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.csprojResolveAs
 F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.pdb
 E:\MyProduct\ProductInventoryManageMent\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\BLL.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\BLL.pdb
+E:\MyProduct\ProductInventoryManageMent\BLL\obj\Debug\BLL.dll
+E:\MyProduct\ProductInventoryManageMent\BLL\obj\Debug\BLL.pdb

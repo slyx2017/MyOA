@@ -40,7 +40,7 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public void GetAlbumTypeList()
         {
-            BLL.AlbumTypes bll_pl = new BLL.AlbumTypes();
+            BLL.AlbumTypesBLL bll_pl = new BLL.AlbumTypesBLL();
             DataSet ds = bll_pl.GetAlbumType();
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -59,7 +59,7 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public void GetInfoDS()
         {
-            BLL.Users bll_u = new BLL.Users();
+            BLL.UsersBLL bll_u = new BLL.UsersBLL();
             DataSet ds = bll_u.GetUserList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {

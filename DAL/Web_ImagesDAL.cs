@@ -8,9 +8,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:Web_Images
 	/// </summary>
-	public partial class Web_Images
+	public partial class Web_ImagesDAL
 	{
-		public Web_Images()
+		public Web_ImagesDAL()
 		{}
 		#region  BasicMethod
 

@@ -6,35 +6,19 @@ using Model;
 namespace BLL
 {
 	/// <summary>
-	/// Web_Products
+	/// Sys_RoleMenuMapping
 	/// </summary>
-	public partial class Web_Products
+	public partial class Sys_RoleMenuMappingBLL
 	{
-		private readonly DAL.Web_Products dal=new DAL.Web_Products();
-		public Web_Products()
+		private readonly DAL.Sys_RoleMenuMappingDAL dal=new DAL.Sys_RoleMenuMappingDAL();
+		public Sys_RoleMenuMappingBLL()
 		{}
 		#region  BasicMethod
 
 		/// <summary>
-		/// 得到最大ID
-		/// </summary>
-		public int GetMaxId()
-		{
-			return dal.GetMaxId();
-		}
-
-		/// <summary>
-		/// 是否存在该记录
-		/// </summary>
-		public bool Exists(int Id)
-		{
-			return dal.Exists(Id);
-		}
-
-		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Model.Web_Products model)
+		public bool Add(Model.Sys_RoleMenuMapping model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +26,7 @@ namespace BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Web_Products model)
+		public bool Update(Model.Sys_RoleMenuMapping model)
 		{
 			return dal.Update(model);
 		}
@@ -50,41 +34,34 @@ namespace BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(int Id)
+		public bool Delete()
 		{
-			
-			return dal.Delete(Id);
-		}
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		public bool DeleteList(string Idlist )
-		{
-			return dal.DeleteList(Idlist );
+			//该表无主键信息，请自定义主键/条件字段
+			return dal.Delete();
 		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Web_Products GetModel(int Id)
+		public Model.Sys_RoleMenuMapping GetModel()
 		{
-			
-			return dal.GetModel(Id);
+			//该表无主键信息，请自定义主键/条件字段
+			return dal.GetModel();
 		}
 
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Model.Web_Products GetModelByCache(int Id)
+		public Model.Sys_RoleMenuMapping GetModelByCache()
 		{
-			
-			string CacheKey = "Web_ProductsModel-" + Id;
+			//该表无主键信息，请自定义主键/条件字段
+			string CacheKey = "Sys_RoleMenuMappingModel-" ;
 			object objModel = Common.DataCache.GetCache(CacheKey);
 			if (objModel == null)
 			{
 				try
 				{
-					objModel = dal.GetModel(Id);
+					objModel = dal.GetModel();
 					if (objModel != null)
 					{
 						int ModelCache = Common.ConfigHelper.GetConfigInt("ModelCache");
@@ -93,7 +70,7 @@ namespace BLL
 				}
 				catch{}
 			}
-			return (Model.Web_Products)objModel;
+			return (Model.Sys_RoleMenuMapping)objModel;
 		}
 
 		/// <summary>
@@ -103,17 +80,34 @@ namespace BLL
 		{
 			return dal.GetList(strWhere);
 		}
-		/// <summary>
-		/// 获得前几行数据
+        /// <summary>
+		/// 获得页面地址
 		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
+		public DataSet GetPagePath(int roleId)
+        {
+            return dal.GetPagePath(roleId);
+        }
+        /// <summary>
+        /// 获得角色列表 "roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <param name="roleId">"roleId=0":查询角色表;"roleId=-1":查询角色菜单映射表</param>
+        /// <returns></returns>
+        public DataSet GetRoleList(string strWhere, int roleId)
+        {
+            return dal.GetRoleList(strWhere, roleId);
+        }
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataSet GetList(int Top,string strWhere,string filedOrder)
 		{
 			return dal.GetList(Top,strWhere,filedOrder);
 		}
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Web_Products> GetModelList(string strWhere)
+		public List<Model.Sys_RoleMenuMapping> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -121,13 +115,13 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Web_Products> DataTableToList(DataTable dt)
+		public List<Model.Sys_RoleMenuMapping> DataTableToList(DataTable dt)
 		{
-			List<Model.Web_Products> modelList = new List<Model.Web_Products>();
+			List<Model.Sys_RoleMenuMapping> modelList = new List<Model.Sys_RoleMenuMapping>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.Web_Products model;
+				Model.Sys_RoleMenuMapping model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

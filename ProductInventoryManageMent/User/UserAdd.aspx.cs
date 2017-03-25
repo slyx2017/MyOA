@@ -54,7 +54,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public DataSet GetPowerLevel()
         {
-            BLL.Sys_PowerLevel bll_pl = new BLL.Sys_PowerLevel();
+            BLL.Sys_PowerLevelBLL bll_pl = new BLL.Sys_PowerLevelBLL();
             DataSet ds = bll_pl.GetPowerLevelList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -84,7 +84,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public DataSet GetRoleList()
         {
-            BLL.Sys_RoleInfo bll_ri = new BLL.Sys_RoleInfo();
+            BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();
             //int roleId = int.Parse(Session["RoleID"].ToString());
             //string strWhere = " RoleID=" + roleId + "";
             strWhere = "";

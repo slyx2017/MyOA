@@ -40,7 +40,7 @@ namespace ProductInventoryManagement.User
         /// <returns></returns>
         public DataSet GetInfoDS()
         {
-            BLL.Users bll_u = new BLL.Users();
+            BLL.UsersBLL bll_u = new BLL.UsersBLL();
             DataSet ds = bll_u.GetUserList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {

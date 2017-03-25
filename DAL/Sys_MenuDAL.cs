@@ -8,9 +8,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:Sys_Menu
 	/// </summary>
-	public partial class Sys_Menu
+	public partial class Sys_MenuDAL
 	{
-		public Sys_Menu()
+		public Sys_MenuDAL()
 		{}
 		#region  BasicMethod
 

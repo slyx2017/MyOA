@@ -13,7 +13,7 @@ namespace ProductInventoryManagement.ashx
     public class menu : IHttpHandler, IRequiresSessionState
     {
         Model.Sys_Menu model = null;
-        BLL.Sys_Menu bll = new BLL.Sys_Menu();
+        BLL.Sys_MenuBLL bll = new BLL.Sys_MenuBLL();
         string strWhere = "";
         string parentJson = "";
         string childWhere = "";

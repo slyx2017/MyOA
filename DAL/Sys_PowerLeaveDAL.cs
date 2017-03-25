@@ -8,9 +8,9 @@ namespace DAL
     /// <summary>
     /// 数据访问类:Sys_PowerLevel
     /// </summary>
-    public partial class Sys_PowerLevel
+    public partial class Sys_PowerLevelDAL
     {
-        public Sys_PowerLevel()
+        public Sys_PowerLevelDAL()
         { }
         #region  BasicMethod
         /// <summary>

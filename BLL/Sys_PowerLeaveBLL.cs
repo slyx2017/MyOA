@@ -8,10 +8,10 @@ namespace BLL
     /// <summary>
     /// Sys_PowerLevel
     /// </summary>
-    public partial class Sys_PowerLevel
+    public partial class Sys_PowerLevelBLL
     {
-        private readonly DAL.Sys_PowerLevel dal = new DAL.Sys_PowerLevel();
-        public Sys_PowerLevel()
+        private readonly DAL.Sys_PowerLevelDAL dal = new DAL.Sys_PowerLevelDAL();
+        public Sys_PowerLevelBLL()
         { }
         #region  BasicMethod
         /// <summary>

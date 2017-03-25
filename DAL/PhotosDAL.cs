@@ -8,9 +8,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:Photos
 	/// </summary>
-	public partial class Photos
+	public partial class PhotosDAL
 	{
-		public Photos()
+		public PhotosDAL()
 		{}
 		#region  BasicMethod
 

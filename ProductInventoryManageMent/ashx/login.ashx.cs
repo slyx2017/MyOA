@@ -13,7 +13,7 @@ namespace ProductInventoryManagement.ashx
     /// </summary>
     public class login : IHttpHandler,IRequiresSessionState
     {
-        BLL.Users bll = new BLL.Users();
+        BLL.UsersBLL bll = new BLL.UsersBLL();
         //string strWhere = "";
         public void ProcessRequest(HttpContext context)
         {

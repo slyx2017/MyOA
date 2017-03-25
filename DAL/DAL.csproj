@@ -55,7 +55,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\ProductInventoryManagement\bin\</OutputPath>
+    <OutputPath>..\ProductInventoryManageMent\bin\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -132,20 +132,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Albums.cs" />
-    <Compile Include="AlbumTypes.cs" />
+    <Compile Include="AlbumsDAL.cs" />
+    <Compile Include="AlbumTypesDAL.cs" />
     <Compile Include="DeptTypeDAL.cs" />
     <Compile Include="LeaveTypesDAL.cs" />
-    <Compile Include="Photos.cs" />
+    <Compile Include="PhotosDAL.cs" />
     <Compile Include="Sys_LeavesDAL.cs" />
-    <Compile Include="Sys_Menu.cs" />
-    <Compile Include="Sys_PowerLeave.cs" />
-    <Compile Include="Sys_RoleInfo.cs" />
-    <Compile Include="Sys_RoleMenuMapping.cs" />
-    <Compile Include="Sys_UserRoleMapping.cs" />
-    <Compile Include="Users.cs" />
-    <Compile Include="Web_Images.cs" />
-    <Compile Include="Web_Products.cs" />
+    <Compile Include="Sys_MenuDAL.cs" />
+    <Compile Include="Sys_PowerLeaveDAL.cs" />
+    <Compile Include="Sys_RoleInfoDAL.cs" />
+    <Compile Include="Sys_RoleMenuMappingDAL.cs" />
+    <Compile Include="Sys_UserRoleMappingDAL.cs" />
+    <Compile Include="UsersDAL.cs" />
+    <Compile Include="Web_ImagesDAL.cs" />
+    <Compile Include="Web_ProductsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

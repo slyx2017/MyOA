@@ -9,8 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Album
 {
+    
+
     public partial class AlbumPhotos : PageValidatePermiss
     {
+        BLL.PhotosBLL bll_p = new BLL.PhotosBLL();
+        BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         public int albumid = 0;
         public string albumname = "";
         public string coverphotopath = "";
@@ -46,7 +50,6 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public DataSet GetInfoDS()
         {
-            BLL.Photos bll_p = new BLL.Photos();
             strWhere = "AlbumId=" + albumid + "";
             DataSet ds = bll_p.GetList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
@@ -58,7 +61,6 @@ namespace ProductInventoryManagement.Album
         }
         public void GetAlbumDB()
         {
-            BLL.Albums bll_a = new BLL.Albums();
             strWhere = "AlbumId=" + albumid + "";
             DataSet ds = bll_a.GetList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)

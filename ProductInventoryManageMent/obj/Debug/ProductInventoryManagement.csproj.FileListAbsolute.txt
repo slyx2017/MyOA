@@ -68,3 +68,15 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManageMent\obj\De
 F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManageMent\obj\Debug\ProductInventoryManageMent.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManageMent\obj\Debug\ProductInventoryManageMent.pdb
 E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\obj\Debug\ProductInventoryManageMent.csprojResolveAssemblyReference.cache
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\ProductInventoryManageMent.dll.config
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\ProductInventoryManageMent.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\ProductInventoryManageMent.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\DAL.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\OpenSmtp.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\DBUtility.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\BLL.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\Common.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\Model.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\DAL.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\obj\Debug\ProductInventoryManageMent.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\obj\Debug\ProductInventoryManageMent.pdb

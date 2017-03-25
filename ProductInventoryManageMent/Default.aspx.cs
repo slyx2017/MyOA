@@ -11,7 +11,7 @@ namespace ProductInventoryManagement
 {
     public partial class Default : PageValidatePermiss
     {
-        BLL.Sys_Menu bll = new BLL.Sys_Menu();
+        BLL.Sys_MenuBLL bll = new BLL.Sys_MenuBLL();
         public string homepage = "";
         protected void Page_Load(object sender, EventArgs e)
         {

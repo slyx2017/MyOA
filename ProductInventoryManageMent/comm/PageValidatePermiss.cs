@@ -7,7 +7,7 @@ namespace ProductInventoryManagement.comm
     {
         public static bool ValidateUserPemiss(string currentPath)
         {
-            BLL.Sys_RoleMenuMapping bll_ur = new BLL.Sys_RoleMenuMapping();
+            BLL.Sys_RoleMenuMappingBLL bll_ur = new BLL.Sys_RoleMenuMappingBLL();
             int roleId = int.Parse(HttpContext.Current.Session["RoleId"].ToString());
             DataSet ds = bll_ur.GetPagePath(roleId);
             int count = ds.Tables[0].Select(" MenuUrl='" + currentPath + "'").Length;

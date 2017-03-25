@@ -41,7 +41,7 @@ namespace ProductInventoryManageMent.User
         /// <returns></returns>
         public void GetUserModel()
         {
-            BLL.Users bll_u = new BLL.Users();
+            BLL.UsersBLL bll_u = new BLL.UsersBLL();
             model_u = new Model.Users();
             model_u = bll_u.GetModel(uid);
             upwd = DBUtility.DESEncrypt.Decrypt(model_u.uPwd.Trim());

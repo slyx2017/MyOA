@@ -11,7 +11,7 @@ namespace ProductInventoryManagement.ashx
     /// </summary>
     public class user : IHttpHandler,IRequiresSessionState
     {
-        BLL.Users bll_u = new BLL.Users();
+        BLL.UsersBLL bll_u = new BLL.UsersBLL();
         Model.Users model_u = new Model.Users();
         public void ProcessRequest(HttpContext context)
         {
@@ -66,7 +66,7 @@ namespace ProductInventoryManagement.ashx
             model_u = new Model.Users();
             model_u.uId = uid;
             model_u.uPwd =DESEncrypt.Encrypt(pwd);
-            bll_u = new BLL.Users();
+            bll_u = new BLL.UsersBLL();
             bool isOk = bll_u.ModifyPwd(model_u);
             if (isOk)
             {
@@ -88,7 +88,7 @@ namespace ProductInventoryManagement.ashx
             context.Response.ContentType = "text/plain";
             int uid = int.Parse(context.Request.Params["uId"].ToString());
             int state = int.Parse(context.Request.Params["state"].ToString());
-            bll_u = new BLL.Users();
+            bll_u = new BLL.UsersBLL();
             int isdel = bll_u.FreezeUser(uid, state);
             if (isdel > 0)
             {
@@ -108,7 +108,7 @@ namespace ProductInventoryManagement.ashx
             context.Response.ContentType = "text/plain";
             int uid = int.Parse(context.Request.Params["uId"].ToString());
             int uIsDel = int.Parse(context.Request.Params["uIsDel"].ToString());
-            bll_u = new BLL.Users();
+            bll_u = new BLL.UsersBLL();
             int isdel = bll_u.DeleteUserByID(uid, uIsDel);
             if (isdel > 0)
             {
@@ -135,7 +135,7 @@ namespace ProductInventoryManagement.ashx
             DateTime? birthday = DateTime.Parse(context.Request.Params["birthday"]);
             string sex = context.Request.Params["sex"];
             string department = context.Request.Params["Department"];
-            bll_u = new BLL.Users();
+            bll_u = new BLL.UsersBLL();
             model_u = new Model.Users();
             model_u.uId = uid;
             model_u.uLoginName = uLoginName;
@@ -172,7 +172,7 @@ namespace ProductInventoryManagement.ashx
             string department = context.Request.Params["Department"];
             string sex = context.Request.Params["sex"];
             bool uisdel = false;
-            bll_u = new BLL.Users();
+            bll_u = new BLL.UsersBLL();
             model_u = new Model.Users();
             model_u.uLoginName = uLoginName;
             model_u.uPwd = DESEncrypt.Encrypt(password);

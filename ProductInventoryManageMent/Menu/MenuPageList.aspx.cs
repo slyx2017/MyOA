@@ -40,7 +40,7 @@ namespace ProductInventoryManagement.Menu
         /// <returns></returns>
         public DataTable GetInfoDS()
         {
-            BLL.Sys_Menu bll_m = new BLL.Sys_Menu();
+            BLL.Sys_MenuBLL bll_m = new BLL.Sys_MenuBLL();
             int pid = 0;
             int roleId = int.Parse(Session["RoleID"].ToString());
             DataSet ds = bll_m.GetMenuListByParentID(pid,roleId);

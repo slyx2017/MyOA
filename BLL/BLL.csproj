@@ -109,15 +109,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ProductInventoryManageMent\bin\Common.dll</HintPath>
     </Reference>
-    <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    <Reference Include="DAL, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProductInventoryManageMent\bin\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DBUtility, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProductInventoryManageMent\bin\DBUtility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Model, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProductInventoryManagement\bin\Model.dll</HintPath>
+      <HintPath>..\ProductInventoryManageMent\bin\Model.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -147,26 +152,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Albums.cs" />
-    <Compile Include="AlbumTypes.cs" />
+    <Compile Include="AlbumsBLL.cs" />
+    <Compile Include="AlbumTypesBLL.cs" />
     <Compile Include="DeptTypeBLL.cs" />
     <Compile Include="LeaveTypesBLL.cs" />
-    <Compile Include="Photos.cs" />
+    <Compile Include="PhotosBLL.cs" />
     <Compile Include="Sys_LeavesBLL.cs" />
-    <Compile Include="Sys_Menu.cs" />
-    <Compile Include="Sys_PowerLeave.cs" />
-    <Compile Include="Sys_RoleInfo.cs" />
-    <Compile Include="Sys_RoleMenuMapping.cs" />
-    <Compile Include="Sys_UserRoleMapping.cs" />
-    <Compile Include="Users.cs" />
-    <Compile Include="Web_Images.cs" />
-    <Compile Include="Web_Products.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
-      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
-      <Name>DBUtility</Name>
-    </ProjectReference>
+    <Compile Include="Sys_MenuBLL.cs" />
+    <Compile Include="Sys_PowerLeaveBLL.cs" />
+    <Compile Include="Sys_RoleInfoBLL.cs" />
+    <Compile Include="Sys_RoleMenuMappingBLL.cs" />
+    <Compile Include="Sys_UserRoleMappingBLL.cs" />
+    <Compile Include="UsersBLL.cs" />
+    <Compile Include="Web_ImagesBLL.cs" />
+    <Compile Include="Web_ProductsBLL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

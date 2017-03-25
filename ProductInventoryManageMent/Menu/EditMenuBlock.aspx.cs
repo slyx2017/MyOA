@@ -49,7 +49,7 @@ namespace ProductInventoryManagement.Menu
         /// <returns></returns>
         public void GetInfoDS()
         {
-            BLL.Sys_Menu bll_m = new BLL.Sys_Menu();
+            BLL.Sys_MenuBLL bll_m = new BLL.Sys_MenuBLL();
             model_m = new Model.Sys_Menu();
             model_m = bll_m.GetModel(id);
             isck = model_m.IsInUse == 1 ? "checked='true'" : "";

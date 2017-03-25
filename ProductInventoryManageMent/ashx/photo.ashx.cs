@@ -14,7 +14,7 @@ namespace ProductInventoryManagement.ashx
     /// </summary>
     public class photo : IHttpHandler,IRequiresSessionState
     {
-        BLL.Photos bll = new BLL.Photos();
+        BLL.PhotosBLL bll = new BLL.PhotosBLL();
         Model.Photos listmodel =new Model.Photos();
         //string ExpImgDir = "/Images";
         public void ProcessRequest(HttpContext context)

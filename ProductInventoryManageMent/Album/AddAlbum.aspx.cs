@@ -11,6 +11,7 @@ namespace ProductInventoryManagement.Album
 {
     public partial class AddAlbum : PageValidatePermiss
     {
+        BLL.AlbumTypesBLL bll_pl = new BLL.AlbumTypesBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isSessionNull = SessionIsNull();
@@ -42,7 +43,6 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public DataSet GetAlbumTypeList()
         {
-            BLL.AlbumTypes bll_pl = new BLL.AlbumTypes();
             DataSet ds = bll_pl.GetAlbumType();
             if (ds.Tables[0].Rows.Count > 0)
             {

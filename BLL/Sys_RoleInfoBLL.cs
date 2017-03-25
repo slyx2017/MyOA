@@ -8,10 +8,10 @@ namespace BLL
 	/// <summary>
 	/// Sys_RoleInfo
 	/// </summary>
-	public partial class Sys_RoleInfo
+	public partial class Sys_RoleInfoBLL
 	{
-		private readonly DAL.Sys_RoleInfo dal=new DAL.Sys_RoleInfo();
-		public Sys_RoleInfo()
+		private readonly DAL.Sys_RoleInfoDAL dal=new DAL.Sys_RoleInfoDAL();
+		public Sys_RoleInfoBLL()
 		{}
 		#region  BasicMethod
 

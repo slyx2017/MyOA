@@ -40,7 +40,7 @@ namespace ProductInventoryManagement.Album
         /// <returns></returns>
         public DataSet GetInfoDS()
         {
-            BLL.Albums bll_a = new BLL.Albums();
+            BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
             int AlbumId = 0;
             DataSet ds = bll_a.GetAlbumList(strWhere, AlbumId);
             if (ds.Tables[0].Rows.Count > 0)

@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
+using Common;
 using Model;
 namespace BLL
 {
 	/// <summary>
-	/// Web_Images
+	/// Web_Products
 	/// </summary>
-	public partial class Web_Images
+	public partial class Web_ProductsBLL
 	{
-		private readonly DAL.Web_Images dal=new DAL.Web_Images();
-		public Web_Images()
+		private readonly DAL.Web_ProductsDAL dal=new DAL.Web_ProductsDAL();
+		public Web_ProductsBLL()
 		{}
 		#region  BasicMethod
 
@@ -33,7 +34,7 @@ namespace BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Model.Web_Images model)
+		public int  Add(Model.Web_Products model)
 		{
 			return dal.Add(model);
 		}
@@ -41,7 +42,7 @@ namespace BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Web_Images model)
+		public bool Update(Model.Web_Products model)
 		{
 			return dal.Update(model);
 		}
@@ -65,10 +66,34 @@ namespace BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Web_Images GetModel(int Id)
+		public Model.Web_Products GetModel(int Id)
 		{
 			
 			return dal.GetModel(Id);
+		}
+
+		/// <summary>
+		/// 得到一个对象实体，从缓存中
+		/// </summary>
+		public Model.Web_Products GetModelByCache(int Id)
+		{
+			
+			string CacheKey = "Web_ProductsModel-" + Id;
+			object objModel = Common.DataCache.GetCache(CacheKey);
+			if (objModel == null)
+			{
+				try
+				{
+					objModel = dal.GetModel(Id);
+					if (objModel != null)
+					{
+						int ModelCache = Common.ConfigHelper.GetConfigInt("ModelCache");
+						Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(ModelCache), TimeSpan.Zero);
+					}
+				}
+				catch{}
+			}
+			return (Model.Web_Products)objModel;
 		}
 
 		/// <summary>
@@ -88,7 +113,7 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Web_Images> GetModelList(string strWhere)
+		public List<Model.Web_Products> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -96,13 +121,13 @@ namespace BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Model.Web_Images> DataTableToList(DataTable dt)
+		public List<Model.Web_Products> DataTableToList(DataTable dt)
 		{
-			List<Model.Web_Images> modelList = new List<Model.Web_Images>();
+			List<Model.Web_Products> modelList = new List<Model.Web_Products>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Model.Web_Images model;
+				Model.Web_Products model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);

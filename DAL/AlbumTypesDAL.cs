@@ -8,9 +8,9 @@ namespace DAL
 	/// <summary>
 	/// 数据访问类:AlbumTypes
 	/// </summary>
-	public partial class AlbumTypes
+	public partial class AlbumTypesDAL
 	{
-		public AlbumTypes()
+		public AlbumTypesDAL()
 		{}
 		#region  BasicMethod
 
