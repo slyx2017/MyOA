@@ -1,15 +1,15 @@
-﻿using System;
+﻿using ProductInventoryManagement.comm;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ProductInventoryManagement.comm;
-using System.Data;
 
 namespace ProductInventoryManageMent.Sys
 {
-    public partial class Hols : PageValidatePermiss
+    public partial class DisposeHols : PageValidatePermiss
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,8 +41,8 @@ namespace ProductInventoryManageMent.Sys
         public DataSet GetInfoDS()
         {
             BLL.Sys_LeavesBLL bll = new BLL.Sys_LeavesBLL();
-            string userName =Session["uLoginName"].ToString();
-            strWhere = " ApplyPerson='"+ userName + "'";
+            string userName = Session["uLoginName"].ToString();
+            strWhere = " ApprovalPerson='" + userName + "'";
             DataSet ds = bll.GetList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {

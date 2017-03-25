@@ -253,7 +253,9 @@
     <Content Include="Sys\AddDept.aspx" />
     <Content Include="Sys\AddHols.aspx" />
     <Content Include="Sys\DeptList.aspx" />
-    <Content Include="Sys\Hols.aspx" />
+    <Content Include="Sys\ApplyHols.aspx" />
+    <Content Include="Sys\DisposeHols.aspx" />
+    <Content Include="Sys\HolsModify.aspx" />
     <Content Include="User\EditUser.aspx" />
     <Content Include="User\ModifyPwd.aspx" />
     <Content Include="User\UserAdd.aspx" />
@@ -509,12 +511,26 @@
     <Compile Include="Sys\DeptList.aspx.designer.cs">
       <DependentUpon>DeptList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\Hols.aspx.cs">
-      <DependentUpon>Hols.aspx</DependentUpon>
+    <Compile Include="Sys\ApplyHols.aspx.cs">
+      <DependentUpon>ApplyHols.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\Hols.aspx.designer.cs">
-      <DependentUpon>Hols.aspx</DependentUpon>
+    <Compile Include="Sys\ApplyHols.aspx.designer.cs">
+      <DependentUpon>ApplyHols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\DisposeHols.aspx.cs">
+      <DependentUpon>DisposeHols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\DisposeHols.aspx.designer.cs">
+      <DependentUpon>DisposeHols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\HolsModify.aspx.cs">
+      <DependentUpon>HolsModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\HolsModify.aspx.designer.cs">
+      <DependentUpon>HolsModify.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>

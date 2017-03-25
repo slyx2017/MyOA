@@ -26,7 +26,7 @@
             width: 220px;
             padding: 30px 50px 0 330px;
             height: 220px;
-            background: #fff url(../img/20150212154319.jpg) no-repeat 30px 40px;
+            background: #fff url(../img/20170325.jpg) no-repeat 30px 40px;
             margin: auto;
             overflow: hidden;
         }

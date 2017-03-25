@@ -34,30 +34,30 @@ namespace ProductInventoryManagement.User
                 {
                     uid = int.Parse(Request.Params["uId"].ToString());
                     powername = Request.Params["PowerName"].ToString();
-                    this.ddl_PowerLevel.DataSource = GetPowerLevel();
-                    this.ddl_PowerLevel.DataTextField = "PowerName";
-                    this.ddl_PowerLevel.DataValueField = "PowerLevelID";
-                    this.ddl_PowerLevel.DataBind();
+                    ddl_PowerLevel.DataSource = GetPowerLevel();
+                    ddl_PowerLevel.DataTextField = "PowerName";
+                    ddl_PowerLevel.DataValueField = "PowerLevelID";
+                    ddl_PowerLevel.DataBind();
                     ListItem item_power = ddl_PowerLevel.Items.FindByText(powername);
                     if (item_power != null)
                     {
                         item_power.Selected = true;
                     }
                     department = Request.Params["Department"].ToString();
-                    this.ddl_Department.DataSource = GetDeptList();
-                    this.ddl_Department.DataTextField = "DeptName";
-                    this.ddl_Department.DataValueField = "DeptName";
-                    this.ddl_Department.DataBind();
+                    ddl_Department.DataSource = GetDeptList();
+                    ddl_Department.DataTextField = "DeptName";
+                    ddl_Department.DataValueField = "DeptName";
+                    ddl_Department.DataBind();
                     ListItem item_dept = ddl_Department.Items.FindByText(department);
                     if (item_dept != null)
                     {
                         item_dept.Selected = true;
                     }
                     rolename = Request.Params["RoleName"].ToString();
-                    this.ddl_RoleList.DataSource = GetRoleList();
-                    this.ddl_RoleList.DataTextField = "RoleName";
-                    this.ddl_RoleList.DataValueField = "RoleID";
-                    this.ddl_RoleList.DataBind();
+                    ddl_RoleList.DataSource = GetRoleList();
+                    ddl_RoleList.DataTextField = "RoleName";
+                    ddl_RoleList.DataValueField = "RoleID";
+                    ddl_RoleList.DataBind();
                     ListItem item_role = ddl_RoleList.Items.FindByText(rolename);
                     if (item_role != null)
                     {

@@ -74,7 +74,7 @@ namespace DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Sys_Leaves model)
+		public int Update(Model.Sys_Leaves model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update Sys_Leaves set ");
@@ -110,15 +110,7 @@ namespace DAL
 			parameters[8].Value = model.ApplyPerson;
 			parameters[9].Value = model.ID;
 
-			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
-			if (rows > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 		}
 
 		/// <summary>

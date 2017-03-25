@@ -34,7 +34,7 @@ namespace BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Model.Sys_Leaves model)
+		public int Update(Model.Sys_Leaves model)
 		{
 			return dal.Update(model);
 		}
