@@ -11,13 +11,16 @@ namespace ProductInventoryManagement.ashx
     /// </summary>
     public class user : IHttpHandler,IRequiresSessionState
     {
-        BLL.Users bll_u = null;
-        Model.Users model_u = null;
+        BLL.Users bll_u = new BLL.Users();
+        Model.Users model_u = new Model.Users();
         public void ProcessRequest(HttpContext context)
         {
             string param = context.Request.Params["param"];
             switch (param)
             {
+                case "isExist":
+                    IsExist(context);
+                    break;
                 case "add":
                     AddUser(context);
                     break;
@@ -39,8 +42,25 @@ namespace ProductInventoryManagement.ashx
 
         }
 
+        private void IsExist(HttpContext context)
+        {
+            context.Response.ContentType = "text/plain";
+            string uLoginName = context.Request.Params["uLoginName"];
+           bool flag= bll_u.Exists(uLoginName);
+            if (flag)
+            {
+                context.Response.Write("ok");
+            }
+            else
+            {
+                context.Response.Write("no");
+            }
+            context.Response.End();
+        }
+
         private void ModifyPwd(HttpContext context)
         {
+            context.Response.ContentType = "text/plain";
             int uid = int.Parse(context.Request.Params["uId"].ToString());
             string pwd = context.Request.Params["newPwd"];
             model_u = new Model.Users();
@@ -114,6 +134,7 @@ namespace ProductInventoryManagement.ashx
             string email = context.Request.Params["email"];
             DateTime? birthday = DateTime.Parse(context.Request.Params["birthday"]);
             string sex = context.Request.Params["sex"];
+            string department = context.Request.Params["Department"];
             bll_u = new BLL.Users();
             model_u = new Model.Users();
             model_u.uId = uid;
@@ -124,7 +145,7 @@ namespace ProductInventoryManagement.ashx
             model_u.Birthday = birthday;
             model_u.Email = email;
             model_u.uName = uLoginName;
-
+            model_u.Department = department;
             int codeNum = bll_u.EditUser(model_u, roleId);
             if (codeNum > 0)
             {
@@ -148,6 +169,7 @@ namespace ProductInventoryManagement.ashx
             string password = context.Request.Params["password"];
             string email = context.Request.Params["email"];
             DateTime? birthday = DateTime.Parse(context.Request.Params["birthday"]);
+            string department = context.Request.Params["Department"];
             string sex = context.Request.Params["sex"];
             bool uisdel = false;
             bll_u = new BLL.Users();
@@ -163,6 +185,7 @@ namespace ProductInventoryManagement.ashx
             model_u.AccountState = 1;
             model_u.uName = uLoginName;
             model_u.uIsDel = uisdel;
+            model_u.Department = department;
             int codeNum = bll_u.AddNewUser(model_u, roleId);
             if (codeNum > 0)
             {

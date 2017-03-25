@@ -22,6 +22,7 @@ namespace Model
 		private DateTime? _birthday;
 		private int? _accountstate;
 		private int? _powerLevelid;
+        private string _department;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -118,8 +119,20 @@ namespace Model
 			set{ _powerLevelid=value;}
 			get{return _powerLevelid;}
 		}
-		#endregion Model
 
-	}
+        public string Department
+        {
+            get
+            {
+                return _department;
+            }
+            set
+            {
+                _department = value;
+            }
+        }
+        #endregion Model
+
+    }
 }
 

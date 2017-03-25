@@ -82,16 +82,16 @@
                                     <%#Eval("LeaveName")%>
                                 </td>
                                 <td style="padding: 2px;">
-                                    <%#Eval("ApplyTime")%>
+                                    <%#Eval("ApplyTime","{0:yyyy-MM-dd}")%>
                                 </td>
                                 <td style="padding: 2px;">
                                     1
                                 </td>
                                 <td style="padding: 2px;">
-                                    <%#Eval("BeginTime")%>
+                                    <%#Eval("BeginTime","{0:yyyy-MM-dd}")%>
                                 </td>
                                 <td style="padding: 2px;">
-                                    <%#Eval("EndTime")%>
+                                    <%#Eval("EndTime","{0:yyyy-MM-dd}")%>
                                 </td>
                                 <td style="padding: 2px;">
                                     <%#Eval("LeaveStatus").ToString() == "False" ? "<b>待审批</b>" : "<b style=\"color:green;\">已审批</b>"%>

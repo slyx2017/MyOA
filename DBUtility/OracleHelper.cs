@@ -82,58 +82,58 @@ namespace DBUtility
             }
         }
 
-        public static DataSet Query(string connectionString, string SQLString, params OracleParameter[] cmdParms)
-        {
-            using (OracleConnection connection = new OracleConnection(connectionString))
-            {
-                OracleCommand cmd = new OracleCommand();
-                PrepareCommand(cmd, connection, null, SQLString, cmdParms);
-                using (OracleDataAdapter da = new OracleDataAdapter(cmd))
-                {
-                    DataSet ds = new DataSet();
-                    try
-                    {
-                        da.Fill(ds, "ds");
-                        cmd.Parameters.Clear();
-                    }
-                    catch (System.Data.OracleClient.OracleException ex)
-                    {
-                        throw new Exception(ex.Message);
-                    }
-                    finally
-                    {
-                        if (connection.State != ConnectionState.Closed)
-                        {
-                            connection.Close();
-                        }
-                    }
-                    return ds;
-                }
-            }
-        }
+        //public static DataSet Query(string connectionString, string SQLString, params OracleParameter[] cmdParms)
+        //{
+        //    using (OracleConnection connection = new OracleConnection(connectionString))
+        //    {
+        //        OracleCommand cmd = new OracleCommand();
+        //        PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+        //        using (OracleDataAdapter da = new OracleDataAdapter(cmd))
+        //        {
+        //            DataSet ds = new DataSet();
+        //            try
+        //            {
+        //                da.Fill(ds, "ds");
+        //                cmd.Parameters.Clear();
+        //            }
+        //            catch (System.Data.OracleClient.OracleException ex)
+        //            {
+        //                throw new Exception(ex.Message);
+        //            }
+        //            finally
+        //            {
+        //                if (connection.State != ConnectionState.Closed)
+        //                {
+        //                    connection.Close();
+        //                }
+        //            }
+        //            return ds;
+        //        }
+        //    }
+        //}
 
-        private static void PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, string cmdText, OracleParameter[] cmdParms)
-        {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            cmd.Connection = conn;
-            cmd.CommandText = cmdText;
-            if (trans != null)
-                cmd.Transaction = trans;
-            cmd.CommandType = CommandType.Text;//cmdType;
-            if (cmdParms != null)
-            {
-                foreach (OracleParameter parameter in cmdParms)
-                {
-                    if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
-                        (parameter.Value == null))
-                    {
-                        parameter.Value = DBNull.Value;
-                    }
-                    cmd.Parameters.Add(parameter);
-                }
-            }
-        }
+        //private static void PrepareCommand(OracleCommand cmd, OracleConnection conn, OracleTransaction trans, string cmdText, OracleParameter[] cmdParms)
+        //{
+        //    if (conn.State != ConnectionState.Open)
+        //        conn.Open();
+        //    cmd.Connection = conn;
+        //    cmd.CommandText = cmdText;
+        //    if (trans != null)
+        //        cmd.Transaction = trans;
+        //    cmd.CommandType = CommandType.Text;//cmdType;
+        //    if (cmdParms != null)
+        //    {
+        //        foreach (OracleParameter parameter in cmdParms)
+        //        {
+        //            if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
+        //                (parameter.Value == null))
+        //            {
+        //                parameter.Value = DBNull.Value;
+        //            }
+        //            cmd.Parameters.Add(parameter);
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// 执行一条计算查询结果语句，返回查询结果（object）。

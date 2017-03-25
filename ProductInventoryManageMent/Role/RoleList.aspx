@@ -52,7 +52,7 @@
                                         <%#Eval("RoleName")%>
                                     </td>
                                     <td style="padding:2px;">
-                                        <%#Eval("AddTime")%>
+                                        <%#Eval("AddTime","{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td style="padding:2px;">
                                         <%#Eval("AddUser")%>

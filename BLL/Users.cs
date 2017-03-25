@@ -13,7 +13,17 @@ namespace BLL
         private readonly DAL.Users dal = new DAL.Users();
         public Users()
         { }
+
         #region  BasicMethod
+        /// <summary>
+        /// 是否存在此用户名
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool Exists(string name)
+        {
+           return dal.Exists(name);
+        }
         /// <summary>
         /// 增加一条数据
         /// </summary>

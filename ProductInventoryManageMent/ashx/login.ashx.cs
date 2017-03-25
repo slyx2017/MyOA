@@ -48,6 +48,7 @@ namespace ProductInventoryManagement.ashx
                     context.Session.Add("uName", ds.Tables[0].Rows[0]["uName"].ToString().Trim());
                     context.Session.Add("uId", ds.Tables[0].Rows[0]["uId"].ToString());
                     context.Session.Add("RoleID", ds.Tables[0].Rows[0]["RoleID"].ToString());
+                    context.Session.Add("Department", ds.Tables[0].Rows[0]["Department"].ToString());
                     context.Response.Write("{\"success\":\"ok\"}");
                 }
             }
