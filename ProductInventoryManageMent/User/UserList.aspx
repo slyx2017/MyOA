@@ -106,6 +106,9 @@
                             行政级别
                         </th>
                         <th>
+                            所属部门
+                        </th>
+                        <th>
                             手机号码
                         </th>
                         <th>
@@ -142,6 +145,9 @@
                                     <%#Eval("PowerName")%>
                                 </td>
                                 <td style="padding: 2px;">
+                                    <%#Eval("Department")%>
+                                </td>
+                                <td style="padding: 2px;">
                                     <%#Eval("TelePhone")%>
                                 </td>
                                 <td style="padding: 2px;">
@@ -154,10 +160,10 @@
                                     <%#Eval("RoleName")%>
                                 </td>
                                 <td style="padding: 2px;">
-                                    <%#Eval("uAddTime")%>
+                                    <%#Eval("uAddTime","{0:yyyy-MM-dd}")%>
                                 </td>
                                 <td style="padding: 2px;">
-                                    <a href="EditUser.aspx?uId=<%#Eval("uId")%>&&PowerName=<%#Eval("PowerName")%>&&RoleName=<%#Eval("RoleName")%>"
+                                    <a href="EditUser.aspx?uId=<%#Eval("uId")%>&&PowerName=<%#Eval("PowerName")%>&&RoleName=<%#Eval("RoleName")%>&&Department=<%#Eval("Department")%>"
                                         class="btn btn-primary btn-xs">修改</a>&nbsp;<input type="button" class="btn btn-primary btn-xs"
                                             onclick="DelUser(<%#Eval("uId")%>,<%#Eval("uIsDel").ToString()=="False"?"0":"1"%>)"
                                             value="删除" />&nbsp;<input type="button" class="<%# Eval("AccountState").ToString() == "1" ? "btn btn-primary btn-xs" : "btn btn-warning btn-xs"%>"

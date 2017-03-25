@@ -14,6 +14,7 @@ namespace ProductInventoryManagement.User
         public int uid = 0;
         public string powername = "";
         public string rolename = "";
+        public string department = "";
         public string isck = "";
         public string isnock = "";
         string strWhere = " 1=1 ";
@@ -42,7 +43,16 @@ namespace ProductInventoryManagement.User
                     {
                         item_power.Selected = true;
                     }
-
+                    department = Request.Params["Department"].ToString();
+                    this.ddl_Department.DataSource = GetDeptList();
+                    this.ddl_Department.DataTextField = "DeptName";
+                    this.ddl_Department.DataValueField = "DeptName";
+                    this.ddl_Department.DataBind();
+                    ListItem item_dept = ddl_Department.Items.FindByText(department);
+                    if (item_dept != null)
+                    {
+                        item_dept.Selected = true;
+                    }
                     rolename = Request.Params["RoleName"].ToString();
                     this.ddl_RoleList.DataSource = GetRoleList();
                     this.ddl_RoleList.DataTextField = "RoleName";
@@ -83,6 +93,21 @@ namespace ProductInventoryManagement.User
         {
             BLL.Sys_PowerLevel bll_pl = new BLL.Sys_PowerLevel();
             DataSet ds = bll_pl.GetPowerLevelList(strWhere);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return ds;
+            }
+            else
+                return null;
+        }
+        /// <summary>
+        /// 获取部门数据列表
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetDeptList()
+        {
+            BLL.DeptTypeBLL bll_dp = new BLL.DeptTypeBLL();
+            DataSet ds = bll_dp.GetDeptList(strWhere);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 return ds;

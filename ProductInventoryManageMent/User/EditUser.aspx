@@ -13,6 +13,7 @@
     <script type="text/javascript">
         function formSend() {
             var powerlevelID = $("#<%=ddl_PowerLevel.ClientID%>").val();
+            var Department = $("#<%=ddl_Department.ClientID%>").val();
             var uLoginName = $("#uLoginName").val();
             var roleID = $("#<%=ddl_RoleList.ClientID%>").val();
             var telPhone = $("#telPhone").val();
@@ -22,6 +23,11 @@
 
             if (uLoginName == "") {
                  $('#content-body').html("账户不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (Department == "") {
+                $('#content-body').html("部门不能为空！");
                 $('#myModal').modal('toggle');
                 return false;
             }
@@ -39,7 +45,7 @@
                 type: "post",
                 url: "../ashx/user.ashx?param=edit",
                 dataType: "text",
-                data: "uId=" + <%=uid%> + "&&uLoginName=" + uLoginName + "&&telPhone=" + telPhone + "&&email=" + email + "&&birthday=" + birthday + "&&sex=" + sex + "&&powerlevelID=" + powerlevelID + "&&RoleID=" + roleID + "",
+                data: "uId=" + <%=uid%> + "&&uLoginName=" + uLoginName + "&&telPhone=" + telPhone + "&&email=" + email + "&&birthday=" + birthday + "&&sex=" + sex + "&&powerlevelID=" + powerlevelID + "&&Department=" + Department + "&&RoleID=" + roleID + "",
                 contentType: "application/x-www-form-urlencoded",
                 success: function (data) {
                     if (data == "ok") {
@@ -80,6 +86,14 @@
                 行政级别</label>
             <div class="col-sm-4">
                 <asp:DropDownList ID="ddl_PowerLevel" class="form-control" runat="server">
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: center">
+            <label for="ddl_Department" class="col-sm-4 control-label">
+                所属部门</label>
+            <div class="col-sm-4">
+                <asp:DropDownList ID="ddl_Department" class="form-control" runat="server">
                 </asp:DropDownList>
             </div>
         </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript">
         function formSend() {
             var powerlevelID = $("#<%=ddl_PowerLevel.ClientID%>").val();
+            var Department = $("#<%=ddl_Department.ClientID%>").val();
             var uLoginName = $("#uLoginName").val();
             var roleID = $("#<%=ddl_RoleList.ClientID%>").val();
             var telPhone = $("#telPhone").val();
@@ -33,8 +34,31 @@
                 $('#myModal').modal('toggle');
                 return false;
             }
+            else {
+                var flag = "";
+                $.ajax({
+                    url:"../ashx/user.ashx?param=isExist", 
+                    async : false,
+                    data:{ "uLoginName": "" + uLoginName + "" },
+                    success: function (data, status) {
+                        if (data == "ok") {
+                            flag = "ok";
+                        }
+                    }
+                });
+                if (flag=="ok") {
+                    $('#content-body').html("用户名已存在！");
+                    $('#myModal').modal('toggle');
+                    return false;
+                }
+            }
             if (roleID == "-1") {
                 $('#content-body').html("角色类型不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (Department == "-1") {
+                $('#content-body').html("所属部门不能为空！");
                 $('#myModal').modal('toggle');
                 return false;
             }
@@ -67,7 +91,7 @@
                 type: "post",
                 url: "../ashx/user.ashx?param=add",
                 dataType: "text",
-                data: "uLoginName=" + uLoginName + "&&telPhone=" + telPhone + "&&password=" + password + "&&email=" + email + "&&birthday=" + birthday + "&&sex=" + sex + "&&powerlevelID=" + powerlevelID + "&&RoleID=" + roleID + "",
+                data: "uLoginName=" + uLoginName + "&&telPhone=" + telPhone + "&&password=" + password + "&&email=" + email + "&&birthday=" + birthday + "&&sex=" + sex + "&&powerlevelID=" + powerlevelID + "&&Department=" + Department + "&&RoleID=" + roleID + "",
                 contentType: "application/x-www-form-urlencoded",
                 success: function (data) {
                     if (data == "ok") {
@@ -107,6 +131,14 @@
                 行政级别</label>
             <div class="col-sm-4">
                 <asp:DropDownList ID="ddl_PowerLevel" class="form-control" runat="server">
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: center">
+            <label for="ddl_Department" class="col-sm-4 control-label">
+                所属部门</label>
+            <div class="col-sm-4">
+                <asp:DropDownList ID="ddl_Department" class="form-control" runat="server">
                 </asp:DropDownList>
             </div>
         </div>

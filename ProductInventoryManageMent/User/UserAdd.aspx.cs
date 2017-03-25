@@ -29,11 +29,17 @@ namespace ProductInventoryManagement.User
                     this.ddl_PowerLevel.DataValueField = "PowerLevelID";
                     this.ddl_PowerLevel.DataBind();
                     ddl_PowerLevel.Items.Insert(0, new ListItem("--请选择--", "-1"));
+                    this.ddl_Department.DataSource = GetDeptList();
+                    this.ddl_Department.DataTextField = "DeptName";
+                    this.ddl_Department.DataValueField = "DeptName";
+                    this.ddl_Department.DataBind();
+                    ddl_Department.Items.Insert(0, new ListItem("--请选择--", "-1"));
                     this.ddl_RoleList.DataSource = GetRoleList();
                     this.ddl_RoleList.DataTextField = "RoleName";
                     this.ddl_RoleList.DataValueField = "RoleID";
                     this.ddl_RoleList.DataBind();
                     ddl_RoleList.Items.Insert(0, new ListItem("--请选择--", "-1"));
+
                 }
                 else
                 {
@@ -43,7 +49,7 @@ namespace ProductInventoryManagement.User
         }
         string strWhere = " 1=1 ";
         /// <summary>
-        /// 获取数据
+        /// 获取级别数据列表
         /// </summary>
         /// <returns></returns>
         public DataSet GetPowerLevel()
@@ -58,7 +64,22 @@ namespace ProductInventoryManagement.User
                 return null;
         }
         /// <summary>
-        /// 获取数据
+        /// 获取部门数据列表
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetDeptList()
+        {
+            BLL.DeptTypeBLL bll_dp = new BLL.DeptTypeBLL();
+            DataSet ds = bll_dp.GetDeptList(strWhere);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return ds;
+            }
+            else
+                return null;
+        }
+        /// <summary>
+        /// 获取角色数据列表
         /// </summary>
         /// <returns></returns>
         public DataSet GetRoleList()
