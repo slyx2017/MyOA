@@ -45,3 +45,4 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\DA
 F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\DAL\obj\Debug\DAL.pdb
+E:\MyProduct\ProductInventoryManageMent\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

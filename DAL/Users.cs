@@ -46,6 +46,7 @@ namespace DAL
                     new SqlParameter("@Birthday", SqlDbType.DateTime),
                     new SqlParameter("@AccountState", SqlDbType.TinyInt,1),
                     new SqlParameter("@PowerLevelID", SqlDbType.Int,4),
+                    new SqlParameter("@Department", SqlDbType.NVarChar,50),
                     new SqlParameter("@RoleID", SqlDbType.Int,4)};
             parameters[0].Value = model.uName;
             parameters[1].Value = model.uLoginName;
@@ -58,7 +59,8 @@ namespace DAL
             parameters[8].Value = model.Birthday;
             parameters[9].Value = model.AccountState;
             parameters[10].Value = model.PowerLevelID;
-            parameters[11].Value = roleId;
+            parameters[11].Value = model.Department;
+            parameters[12].Value = roleId;
             int result = 0;
             object obj = DbHelperSQL.RunProcedure("AddNewUser", parameters, out result);
             if (obj == null)
@@ -109,6 +111,7 @@ namespace DAL
                     new SqlParameter("@Email", SqlDbType.NVarChar,30),
                     new SqlParameter("@Birthday", SqlDbType.DateTime),
                     new SqlParameter("@PowerLevelID", SqlDbType.Int,4),
+                    new SqlParameter("@Department", SqlDbType.NVarChar,50),
                     new SqlParameter("@RoleID", SqlDbType.Int,4),
                     new SqlParameter("@uId", SqlDbType.Int,4)};
             parameters[0].Value = model.uName;
@@ -118,8 +121,9 @@ namespace DAL
             parameters[4].Value = model.Email;
             parameters[5].Value = model.Birthday;
             parameters[6].Value = model.PowerLevelID;
-            parameters[7].Value = roleId;
-            parameters[8].Value = model.uId;
+            parameters[7].Value = model.Department;
+            parameters[8].Value = roleId;
+            parameters[9].Value = model.uId;
             int result = 0;
             return DbHelperSQL.RunProcedure("ModifyUser", parameters, out result);
         }

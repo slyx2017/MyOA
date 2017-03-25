@@ -62,3 +62,4 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManageMent\bin\BL
 F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\BLL\obj\Debug\BLL.pdb
+E:\MyProduct\ProductInventoryManageMent\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

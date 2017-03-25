@@ -28,3 +28,8 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\Mo
 F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
 F:\BaiduYunDownload\ProductInventoryManageMent\Model\obj\Debug\Model.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\Model\obj\Debug\Model.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\Model.pdb
+E:\MyProduct\ProductInventoryManageMent\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\MyProduct\ProductInventoryManageMent\Model\obj\Debug\Model.dll
+E:\MyProduct\ProductInventoryManageMent\Model\obj\Debug\Model.pdb

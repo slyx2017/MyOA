@@ -36,3 +36,7 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManagement\bin\DB
 F:\BaiduYunDownload\ProductInventoryManageMent\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
 F:\BaiduYunDownload\ProductInventoryManageMent\DBUtility\obj\Debug\DBUtility.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\DBUtility\obj\Debug\DBUtility.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\DBUtility.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManagement\bin\DBUtility.pdb
+E:\MyProduct\ProductInventoryManageMent\DBUtility\obj\Debug\DBUtility.dll
+E:\MyProduct\ProductInventoryManageMent\DBUtility\obj\Debug\DBUtility.pdb

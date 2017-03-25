@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BLL">
+      <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
+    </Reference>
     <Reference Include="Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Common.dll</HintPath>
@@ -581,10 +584,6 @@
     <Content Include="WebDefault.Master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">
       <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
       <Name>DBUtility</Name>

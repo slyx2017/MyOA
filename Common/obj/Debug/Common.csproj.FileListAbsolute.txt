@@ -42,3 +42,8 @@ F:\BaiduYunDownload\ProductInventoryManageMent\ProductInventoryManageMent\bin\Co
 F:\BaiduYunDownload\ProductInventoryManageMent\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 F:\BaiduYunDownload\ProductInventoryManageMent\Common\obj\Debug\Common.dll
 F:\BaiduYunDownload\ProductInventoryManageMent\Common\obj\Debug\Common.pdb
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\Common.dll
+E:\MyProduct\ProductInventoryManageMent\ProductInventoryManageMent\bin\Common.pdb
+E:\MyProduct\ProductInventoryManageMent\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\MyProduct\ProductInventoryManageMent\Common\obj\Debug\Common.dll
+E:\MyProduct\ProductInventoryManageMent\Common\obj\Debug\Common.pdb
