@@ -9,7 +9,7 @@ using ProductInventoryManagement.comm;
 
 namespace ProductInventoryManagement.Menu
 {
-    public partial class MenuList : PageValidatePermiss
+    public partial class MenuList : BasePage
     {
 
         protected void Page_Load(object sender, EventArgs e)

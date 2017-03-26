@@ -3,7 +3,7 @@ using System.Web;
 
 namespace ProductInventoryManagement.comm
 {
-    public class PageValidatePermiss:System.Web.UI.Page
+    public class BasePage:System.Web.UI.Page
     {
         public static bool ValidateUserPemiss(string currentPath)
         {

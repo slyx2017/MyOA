@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Album
 {
-    public partial class AddAlbum : PageValidatePermiss
+    public partial class AddAlbum : BasePage
     {
         BLL.AlbumTypesBLL bll_pl = new BLL.AlbumTypesBLL();
         protected void Page_Load(object sender, EventArgs e)

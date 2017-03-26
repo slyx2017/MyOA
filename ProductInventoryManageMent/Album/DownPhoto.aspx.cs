@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Album
 {
-    public partial class DownPhoto : PageValidatePermiss
+    public partial class DownPhoto : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

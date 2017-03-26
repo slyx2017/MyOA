@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Menu
 {
-    public partial class WebForm1 : PageValidatePermiss
+    public partial class WebForm1 : BasePage
     {
         public string parentid="";
         public string parentMenuName = "";

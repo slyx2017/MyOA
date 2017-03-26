@@ -28,15 +28,47 @@ namespace ProductInventoryManageMent.ashx
                 case "del":
                     DelLeave(context);
                     break;
+                case "dispose":
+                    DisposeLeave(context);
+                    break;
                 default:
                     break;
             }
 
         }
 
+        private void DisposeLeave(HttpContext context)
+        {
+            context.Response.ContentType = "text/plain";
+            int Id = int.Parse(context.Request.Params["Id"]);
+            string DisposeResult = context.Request.Params["DisposeResult"];
+            int leavetatus = int.Parse(context.Request.Params["LeaveStatus"]);
+            int flag= bll.DisposeLeaves(Id, DisposeResult,leavetatus);
+            if (flag > 0)
+            {
+                context.Response.Write("ok");
+            }
+            else
+            {
+                context.Response.Write("no");
+            }
+            context.Response.End();
+        }
+
         private void DelLeave(HttpContext context)
         {
-            throw new NotImplementedException();
+            context.Response.ContentType = "text/plain";
+            int Id = int.Parse(context.Request.Params["Id"]);
+            bool flag=bll.Delete(Id);
+            if (flag)
+            {
+                context.Response.Write("ok");
+            }
+            else
+            {
+                context.Response.Write("no");
+            }
+            context.Response.End();
         }
 
         private void EditLeave(HttpContext context)
@@ -48,9 +80,10 @@ namespace ProductInventoryManageMent.ashx
             DateTime? BeginTime = DateTime.Parse(context.Request.Params["BeginTime"]);
             DateTime? EndTime = DateTime.Parse(context.Request.Params["EndTime"]);
             int Id = int.Parse(context.Request.Params["Id"]);
+            int leavestatus = 0;
             model.ApplyPerson = context.Session["uLoginName"].ToString();
             model.LeaveReason = LeaveReason;
-            model.LeaveStatus = false;
+            model.LeaveStatus = leavestatus;
             model.LeaveTypeID = LeaveTypeID;
             model.ApplyTime = DateTime.Now;
             model.BeginTime = BeginTime;
@@ -77,12 +110,12 @@ namespace ProductInventoryManageMent.ashx
             string ApprovalPerson = context.Request.Params["ApprovalPerson"];
             DateTime? BeginTime = DateTime.Parse(context.Request.Params["BeginTime"]);
             DateTime? EndTime = DateTime.Parse(context.Request.Params["EndTime"]);
-
+            int leavestatus = 0;
             bll = new BLL.Sys_LeavesBLL();
             model = new Model.Sys_Leaves();
             model.ApplyPerson = context.Session["uLoginName"].ToString();
             model.LeaveReason = LeaveReason;
-            model.LeaveStatus =false;
+            model.LeaveStatus = leavestatus;
             model.LeaveTypeID = LeaveTypeID;
             model.ApplyTime = DateTime.Now;
             model.BeginTime = BeginTime;

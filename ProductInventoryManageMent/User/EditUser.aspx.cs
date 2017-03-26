@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.User
 {
-    public partial class EditUser : PageValidatePermiss
+    public partial class EditUser : BasePage
     {
         public int uid = 0;
         public string powername = "";

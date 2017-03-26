@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManageMent.Leaves
 {
-    public partial class DisposeHols : PageValidatePermiss
+    public partial class LeavesDisposeList : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

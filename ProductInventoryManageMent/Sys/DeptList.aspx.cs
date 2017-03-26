@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManageMent.Sys
 {
-    public partial class DeptList : PageValidatePermiss
+    public partial class DeptList : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

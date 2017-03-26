@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ProductInventoryManagement
 {
-    public partial class Default : PageValidatePermiss
+    public partial class Default : BasePage
     {
         BLL.Sys_MenuBLL bll = new BLL.Sys_MenuBLL();
         public string homepage = "";

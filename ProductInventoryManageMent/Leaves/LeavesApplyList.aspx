@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplyHols.aspx.cs" Inherits="ProductInventoryManageMent.Leaves.ApplyHols" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LeavesApplyList.aspx.cs" Inherits="ProductInventoryManageMent.Leaves.LeavesApplyList" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,6 +7,34 @@
     <link href="../dist/css/bootstrap.css" rel="stylesheet" />
     <script type="text/javascript" src="../Scripts/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="../dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        function DelLeaveApply(uid) {
+            $('#content-body').html("你要删除吗？");
+            $('#myModal').modal('toggle');
+            $('#btnOk').bind("click",
+            function () {
+                Delete(uid);
+            });
+        }
+
+        function Delete(uid) {
+            $.post("../ashx/leave.ashx", "param=del&&Id=" + uid + "",
+            function (data) {
+                $('#myModal').modal('hide');
+                if (data == "ok") {
+                    $("#alertMsg").html("删除成功！");
+                    $('#alertDialog').modal('show');
+                    $('#alertDialog').on('hidden.bs.modal', function (e) {
+                        window.location.reload();
+                    });
+                } else {
+                    $("#alertDialog").html("删除失败！");
+                    $('#alertDialog').modal('show');
+                    return false;
+                }
+            }, "text");
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -47,6 +75,8 @@
                             </th>
                             <th>状态
                             </th>
+                            <th>审批结果
+                            </th>
                             <th>审批人
                             </th>
                             <th>操作
@@ -81,17 +111,21 @@
                                         <%#Eval("ApplyTime","{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td style="padding: 2px;">
-                                        <%#Eval("CancelLeaveTime")%>
+                                        <%#Eval("CancelLeaveTime","{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td style="padding: 2px;">
-                                        <%#Eval("LeaveStatus").ToString() == "False" ? "<b>待审批</b>" : "<b style=\"color:green;\">已审批</b>"%>
+                                        <%#Eval("LeaveStatus").ToString() == "0" ? "<b>待审批</b>" : Eval("LeaveStatus").ToString() == "1" ?"<b style=\"color:green;\">已审批</b>":"<b style=\"color:red;\">已驳回</b>"%>
+                                    </td>
+                                    <td style="padding: 2px;">
+                                        <%#Eval("DisposeResult")%>
                                     </td>
                                     <td style="padding: 2px;">
                                         <%#Eval("ApprovalPerson")%>
                                     </td>
                                     <td style="padding: 2px;">
-                                        <div style="<%#Eval("LeaveStatus").ToString() == "False" ? "display:block": "display:none"%>">
-                                            <a href="../ashx/leave.ashx?Id=<%#Eval("ID")%>" class="btn btn-primary btn-xs">删除</a>&nbsp;<a href="HolsModify.aspx?Id=<%#Eval("ID")%>" class="btn btn-primary btn-xs">修改</a>
+                                        <div style="<%#Eval("LeaveStatus").ToString() != "1" ? "display:block": "display:none"%>">
+                                            <input type="button" class="btn btn-primary btn-xs"
+                                                onclick="DelLeaveApply(<%#Eval("Id")%>)" value="删除" />&nbsp;<a href="LeavesApplyModify.aspx?Id=<%#Eval("ID")%>" class="btn btn-primary btn-xs">修改</a>
                                         </div>
                                     </td>
                                 </tr>

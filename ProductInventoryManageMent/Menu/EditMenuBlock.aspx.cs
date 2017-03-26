@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Menu
 {
-    public partial class EditMenuBlock : PageValidatePermiss
+    public partial class EditMenuBlock : BasePage
     {
         public int id = 0;
         public string isck="";

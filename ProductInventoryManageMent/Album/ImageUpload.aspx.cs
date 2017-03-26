@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Album
 {
-    public partial class ImageUpload : PageValidatePermiss
+    public partial class ImageUpload : BasePage
     {
         BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         public int albumid = 0;

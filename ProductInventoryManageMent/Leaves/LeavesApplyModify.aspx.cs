@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManageMent.Leaves
 {
-    public partial class HolsModify : PageValidatePermiss
+    public partial class LeavesApplyModify : BasePage
     {
         public string Id = "";
         string strWhere = " 1=1 ";

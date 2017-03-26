@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Album
 {
-    public partial class ModifyAlbum : PageValidatePermiss
+    public partial class ModifyAlbum : BasePage
     {
         public int albumid = 0;
         public string albumname = "";

@@ -21,7 +21,7 @@ namespace Model
 		private string _approvalperson;
 		private DateTime? _begintime;
 		private DateTime? _endtime;
-		private bool _leavestatus;
+		private int? _leavestatus;
 		private DateTime? _cancelleavetime;
 		private string _applyperson;
 		/// <summary>
@@ -83,7 +83,7 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public bool LeaveStatus
+		public int? LeaveStatus
 		{
 			set{ _leavestatus=value;}
 			get{return _leavestatus;}

@@ -11,7 +11,7 @@ namespace ProductInventoryManagement.Album
 {
     
 
-    public partial class AlbumPhotos : PageValidatePermiss
+    public partial class AlbumPhotos : BasePage
     {
         BLL.PhotosBLL bll_p = new BLL.PhotosBLL();
         BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();

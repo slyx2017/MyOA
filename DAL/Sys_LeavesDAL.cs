@@ -48,7 +48,7 @@ namespace DAL
 					new SqlParameter("@ApprovalPerson", SqlDbType.NVarChar,50),
 					new SqlParameter("@BeginTime", SqlDbType.DateTime),
 					new SqlParameter("@EndTime", SqlDbType.DateTime),
-					new SqlParameter("@LeaveStatus", SqlDbType.Bit,1),
+					new SqlParameter("@LeaveStatus", SqlDbType.Int,4),
 					new SqlParameter("@CancelLeaveTime", SqlDbType.DateTime),
 					new SqlParameter("@ApplyPerson", SqlDbType.NVarChar,50)};
 			parameters[0].Value = model.LeaveReason;
@@ -95,7 +95,7 @@ namespace DAL
 					new SqlParameter("@ApprovalPerson", SqlDbType.NVarChar,50),
 					new SqlParameter("@BeginTime", SqlDbType.DateTime),
 					new SqlParameter("@EndTime", SqlDbType.DateTime),
-					new SqlParameter("@LeaveStatus", SqlDbType.Bit,1),
+					new SqlParameter("@LeaveStatus", SqlDbType.Int,4),
 					new SqlParameter("@CancelLeaveTime", SqlDbType.DateTime),
 					new SqlParameter("@ApplyPerson", SqlDbType.NVarChar,50),
 					new SqlParameter("@ID", SqlDbType.Int,4)};
@@ -112,13 +112,31 @@ namespace DAL
 
 			return DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 		}
-
-		/// <summary>
-		/// 删除一条数据
+        /// <summary>
+		/// 审批假期
 		/// </summary>
-		public bool Delete(int ID)
+		public int DisposeLeaves(int Id, string disposeresult,int leavestatus)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update Sys_Leaves set ");
+            strSql.Append("DisposeResult=@DisposeResult,");
+            strSql.Append("LeaveStatus=@LeaveStatus");
+            strSql.Append(" where ID=@ID");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@DisposeResult", SqlDbType.NVarChar,200),
+                    new SqlParameter("@LeaveStatus", SqlDbType.Int,4),
+                    new SqlParameter("@ID", SqlDbType.Int,4)};
+            parameters[0].Value = disposeresult;
+            parameters[1].Value = leavestatus;
+            parameters[2].Value = Id;
+
+            return DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete(int ID)
 		{
-			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from Sys_Leaves ");
 			strSql.Append(" where ID=@ID");
@@ -222,15 +240,8 @@ namespace DAL
 				}
 				if(row["LeaveStatus"]!=null && row["LeaveStatus"].ToString()!="")
 				{
-					if((row["LeaveStatus"].ToString()=="1")||(row["LeaveStatus"].ToString().ToLower()=="true"))
-					{
-						model.LeaveStatus=true;
-					}
-					else
-					{
-						model.LeaveStatus=false;
-					}
-				}
+                    model.LeaveStatus = int.Parse(row["LeaveStatus"].ToString());
+                }
 				if(row["CancelLeaveTime"]!=null && row["CancelLeaveTime"].ToString()!="")
 				{
 					model.CancelLeaveTime=DateTime.Parse(row["CancelLeaveTime"].ToString());
@@ -251,7 +262,7 @@ namespace DAL
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select ID,LeaveReason ,");
             strSql.Append("LeaveName=(select LeaveName from LeaveTypes lt where lt.ID=l.LeaveTypeID ), ");
-            strSql.Append("ApplyTime,ApprovalPerson,BeginTime,EndTime,LeaveStatus,CancelLeaveTime,ApplyPerson ");
+            strSql.Append("ApplyTime,ApprovalPerson,BeginTime,EndTime,LeaveStatus,CancelLeaveTime,ApplyPerson,DisposeResult ");
 			strSql.Append(" FROM Sys_Leaves l ");
 			if(strWhere.Trim()!="")
 			{

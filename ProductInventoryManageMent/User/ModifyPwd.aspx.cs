@@ -8,7 +8,7 @@ using ProductInventoryManagement.comm;
 
 namespace ProductInventoryManageMent.User
 {
-    public partial class ModifyPwd : PageValidatePermiss
+    public partial class ModifyPwd : BasePage
     {
         public int uid = 0;
         public static Model.Users model_u = null;

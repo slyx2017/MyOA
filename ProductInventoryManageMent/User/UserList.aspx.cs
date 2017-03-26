@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.User
 {
-    public partial class UserList : PageValidatePermiss
+    public partial class UserList : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

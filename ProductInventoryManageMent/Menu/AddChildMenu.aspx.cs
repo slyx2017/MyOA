@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Menu
 {
-    public partial class AddChildMenu : PageValidatePermiss
+    public partial class AddChildMenu : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

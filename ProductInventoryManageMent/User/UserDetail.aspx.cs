@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ProductInventoryManageMent.User
 {
-    public partial class UserDetail : PageValidatePermiss
+    public partial class UserDetail : BasePage
     {
         public int uid = 0;
         public string powername = "";

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Role
 {
-    public partial class RoleList : PageValidatePermiss
+    public partial class RoleList : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

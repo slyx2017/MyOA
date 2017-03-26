@@ -8,7 +8,7 @@ using ProductInventoryManagement.comm;
 
 namespace ProductInventoryManagement.Album
 {
-    public partial class AddAlbumType : PageValidatePermiss
+    public partial class AddAlbumType : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

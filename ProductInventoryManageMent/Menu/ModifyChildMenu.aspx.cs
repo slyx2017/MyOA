@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Menu
 {
-    public partial class ModifyChildMenu : PageValidatePermiss
+    public partial class ModifyChildMenu : BasePage
     {
         public int id = 0;
         public int pid = 0;

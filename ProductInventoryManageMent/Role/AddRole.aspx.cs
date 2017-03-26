@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManagement.Role
 {
-    public partial class AddRole : PageValidatePermiss
+    public partial class AddRole : BasePage
     {
         BLL.Sys_MenuBLL bll_m = new BLL.Sys_MenuBLL();
         BLL.Sys_RoleInfoBLL bll_ri = new BLL.Sys_RoleInfoBLL();

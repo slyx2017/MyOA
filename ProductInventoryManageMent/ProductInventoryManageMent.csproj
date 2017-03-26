@@ -197,6 +197,7 @@
     <Content Include="js\laydate\skins\yalan\laydate.css" />
     <Content Include="js\sdmenu.js" />
     <Content Include="js\说明.txt" />
+    <Content Include="Leaves\LeavesDispose.aspx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\NoPermission.aspx" />
     <Content Include="Login\WebForm1.aspx" />
@@ -251,11 +252,11 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Sys\AddDept.aspx" />
-    <Content Include="Leaves\AddHols.aspx" />
+    <Content Include="Leaves\LeavesApplyAdd.aspx" />
     <Content Include="Sys\DeptList.aspx" />
-    <Content Include="Leaves\ApplyHols.aspx" />
-    <Content Include="Leaves\DisposeHols.aspx" />
-    <Content Include="Leaves\HolsModify.aspx" />
+    <Content Include="Leaves\LeavesApplyList.aspx" />
+    <Content Include="Leaves\LeavesDisposeList.aspx" />
+    <Content Include="Leaves\LeavesApplyModify.aspx" />
     <Content Include="User\EditUser.aspx" />
     <Content Include="User\ModifyPwd.aspx" />
     <Content Include="User\UserAdd.aspx" />
@@ -367,7 +368,7 @@
       <DependentUpon>user.ashx</DependentUpon>
     </Compile>
     <Compile Include="comm\MyNameTransfom.cs" />
-    <Compile Include="comm\PageValidatePermiss.cs">
+    <Compile Include="comm\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="Inventory\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Leaves\LeavesDispose.aspx.cs">
+      <DependentUpon>LeavesDispose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Leaves\LeavesDispose.aspx.designer.cs">
+      <DependentUpon>LeavesDispose.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -497,12 +505,12 @@
     <Compile Include="Sys\AddDept.aspx.designer.cs">
       <DependentUpon>AddDept.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Leaves\AddHols.aspx.cs">
-      <DependentUpon>AddHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyAdd.aspx.cs">
+      <DependentUpon>LeavesApplyAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Leaves\AddHols.aspx.designer.cs">
-      <DependentUpon>AddHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyAdd.aspx.designer.cs">
+      <DependentUpon>LeavesApplyAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sys\DeptList.aspx.cs">
       <DependentUpon>DeptList.aspx</DependentUpon>
@@ -511,26 +519,26 @@
     <Compile Include="Sys\DeptList.aspx.designer.cs">
       <DependentUpon>DeptList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Leaves\ApplyHols.aspx.cs">
-      <DependentUpon>ApplyHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyList.aspx.cs">
+      <DependentUpon>LeavesApplyList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Leaves\ApplyHols.aspx.designer.cs">
-      <DependentUpon>ApplyHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyList.aspx.designer.cs">
+      <DependentUpon>LeavesApplyList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Leaves\DisposeHols.aspx.cs">
-      <DependentUpon>DisposeHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesDisposeList.aspx.cs">
+      <DependentUpon>LeavesDisposeList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Leaves\DisposeHols.aspx.designer.cs">
-      <DependentUpon>DisposeHols.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesDisposeList.aspx.designer.cs">
+      <DependentUpon>LeavesDisposeList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Leaves\HolsModify.aspx.cs">
-      <DependentUpon>HolsModify.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyModify.aspx.cs">
+      <DependentUpon>LeavesApplyModify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Leaves\HolsModify.aspx.designer.cs">
-      <DependentUpon>HolsModify.aspx</DependentUpon>
+    <Compile Include="Leaves\LeavesApplyModify.aspx.designer.cs">
+      <DependentUpon>LeavesApplyModify.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>

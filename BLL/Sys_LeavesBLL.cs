@@ -38,11 +38,17 @@ namespace BLL
 		{
 			return dal.Update(model);
 		}
-
-		/// <summary>
-		/// 删除一条数据
+        /// <summary>
+		/// 审批假期
 		/// </summary>
-		public bool Delete(int ID)
+		public int DisposeLeaves(int Id,string disposeresult,int leavestatus)
+        {
+            return dal.DisposeLeaves(Id,disposeresult,leavestatus);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete(int ID)
 		{
 			
 			return dal.Delete(ID);

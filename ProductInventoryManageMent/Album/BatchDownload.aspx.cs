@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using ICSharpCode.SharpZipLib.Zip;
 namespace ProductInventoryManagement.Album
 {
-    public partial class BatchDownload : PageValidatePermiss
+    public partial class BatchDownload : BasePage
     {
         BLL.AlbumsBLL bll_a = new BLL.AlbumsBLL();
         int albumid = 0;
