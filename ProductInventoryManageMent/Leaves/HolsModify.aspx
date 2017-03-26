@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HolsModify.aspx.cs" Inherits="ProductInventoryManageMent.Sys.HolsModify" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HolsModify.aspx.cs" Inherits="ProductInventoryManageMent.Leaves.HolsModify" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,7 +23,7 @@
                 $('#myModal').modal('toggle');
                 return false;
             }
-            if (days == 0) {
+            if (days < 0) {
                 $('#content-body').html("请假时间不能为0天！");
                 $('#myModal').modal('toggle');
                 return false;
@@ -71,7 +71,7 @@
                 var begindate = new Date("" + BeginTime + "");
                 
                 days = parseInt(enddate.getTime() - begindate.getTime());
-                if (days>0) {
+                if (days>=0) {
                     document.getElementById("numdays").innerHTML = "共请" + parseInt((enddate.getTime() - begindate.getTime()) / (24 * 60 * 60 * 1000) + 1) + "天假";
                 }
                 else {

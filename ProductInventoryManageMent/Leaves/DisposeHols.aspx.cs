@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProductInventoryManageMent.Sys
+namespace ProductInventoryManageMent.Leaves
 {
     public partial class DisposeHols : PageValidatePermiss
     {

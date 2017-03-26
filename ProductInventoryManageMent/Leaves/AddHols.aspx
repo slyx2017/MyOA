@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddHols.aspx.cs" Inherits="ProductInventoryManageMent.Sys.AddHols" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddHols.aspx.cs" Inherits="ProductInventoryManageMent.Leaves.AddHols" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +16,32 @@
             var EndTime = $("#<%=EndTime.ClientID%>").val();
             var LeaveType = $("#<%=ddl_LeaveType.ClientID%>").val();
             var ApprovalPerson = $("#ApprovalPerson").val();
+            var days = GetDays();
+            if (LeaveReason == "") {
+                $('#content-body').html("请假原因不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (EndTime == "" || BeginTime == "") {
+                $('#content-body').html("请假开始时间和结束时间不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (days < 0) {
+                $('#content-body').html("请假开始时间不能大于结束时间！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (LeaveType == "" || LeaveType == -1) {
+                $('#content-body').html("假期类型不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
+            if (ApprovalPerson == "") {
+                $('#content-body').html("审批人不能为空！");
+                $('#myModal').modal('toggle');
+                return false;
+            }
             var data = "LeaveReason=" + LeaveReason + "&&BeginTime=" + BeginTime + "&&EndTime=" + EndTime + "&&LeaveType=" + LeaveType + "&&ApprovalPerson=" + ApprovalPerson + "";
             $.ajax({
                 type: "post",
@@ -41,15 +67,24 @@
         function GetDays() {
             var BeginTime = $("#<%=BeginTime.ClientID%>").val();
             var EndTime = $("#<%=EndTime.ClientID%>").val();
+            var days = 0;
             if (EndTime == "" || BeginTime == "") {
                 document.getElementById("numdays").value = "";
             }
             else {
                 var enddate = new Date("" + EndTime + "");
                 var begindate = new Date("" + BeginTime + "");
-                document.getElementById("numdays").value = "";
-                document.getElementById("numdays").innerHTML = "共请" + ((enddate.getTime() - begindate.getTime()) / (24 * 60 * 60 * 1000) + 1) + "天假";
+                
+                days = parseInt(enddate.getTime() - begindate.getTime());
+                if (days>=0) {
+                    document.getElementById("numdays").innerHTML = "共请" + parseInt((enddate.getTime() - begindate.getTime()) / (24 * 60 * 60 * 1000) + 1) + "天假";
+                }
+                else {
+                    days = 0;
+                    document.getElementById("numdays").innerHTML = "";
+                }
             }
+            return days;
         }
     </script>
 </head>

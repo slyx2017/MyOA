@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace ProductInventoryManageMent.Sys {
+namespace ProductInventoryManageMent.Leaves {
     
     
-    public partial class HolsModify {
+    public partial class AddHols {
         
         /// <summary>
         /// form1 控件。

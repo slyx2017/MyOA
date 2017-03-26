@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace ProductInventoryManageMent.Sys {
+namespace ProductInventoryManageMent.Leaves {
     
     
-    public partial class DisposeHols {
+    public partial class HolsModify {
         
         /// <summary>
         /// form1 控件。
@@ -22,12 +22,30 @@ namespace ProductInventoryManageMent.Sys {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rpt_LeaveList 控件。
+        /// BeginTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_LeaveList;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText BeginTime;
+        
+        /// <summary>
+        /// EndTime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText EndTime;
+        
+        /// <summary>
+        /// ddl_LeaveType 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_LeaveType;
     }
 }

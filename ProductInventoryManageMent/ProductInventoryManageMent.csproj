@@ -251,11 +251,11 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Sys\AddDept.aspx" />
-    <Content Include="Sys\AddHols.aspx" />
+    <Content Include="Leaves\AddHols.aspx" />
     <Content Include="Sys\DeptList.aspx" />
-    <Content Include="Sys\ApplyHols.aspx" />
-    <Content Include="Sys\DisposeHols.aspx" />
-    <Content Include="Sys\HolsModify.aspx" />
+    <Content Include="Leaves\ApplyHols.aspx" />
+    <Content Include="Leaves\DisposeHols.aspx" />
+    <Content Include="Leaves\HolsModify.aspx" />
     <Content Include="User\EditUser.aspx" />
     <Content Include="User\ModifyPwd.aspx" />
     <Content Include="User\UserAdd.aspx" />
@@ -497,11 +497,11 @@
     <Compile Include="Sys\AddDept.aspx.designer.cs">
       <DependentUpon>AddDept.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\AddHols.aspx.cs">
+    <Compile Include="Leaves\AddHols.aspx.cs">
       <DependentUpon>AddHols.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\AddHols.aspx.designer.cs">
+    <Compile Include="Leaves\AddHols.aspx.designer.cs">
       <DependentUpon>AddHols.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sys\DeptList.aspx.cs">
@@ -511,25 +511,25 @@
     <Compile Include="Sys\DeptList.aspx.designer.cs">
       <DependentUpon>DeptList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\ApplyHols.aspx.cs">
+    <Compile Include="Leaves\ApplyHols.aspx.cs">
       <DependentUpon>ApplyHols.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\ApplyHols.aspx.designer.cs">
+    <Compile Include="Leaves\ApplyHols.aspx.designer.cs">
       <DependentUpon>ApplyHols.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\DisposeHols.aspx.cs">
+    <Compile Include="Leaves\DisposeHols.aspx.cs">
       <DependentUpon>DisposeHols.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\DisposeHols.aspx.designer.cs">
+    <Compile Include="Leaves\DisposeHols.aspx.designer.cs">
       <DependentUpon>DisposeHols.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\HolsModify.aspx.cs">
+    <Compile Include="Leaves\HolsModify.aspx.cs">
       <DependentUpon>HolsModify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\HolsModify.aspx.designer.cs">
+    <Compile Include="Leaves\HolsModify.aspx.designer.cs">
       <DependentUpon>HolsModify.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\EditUser.aspx.cs">
