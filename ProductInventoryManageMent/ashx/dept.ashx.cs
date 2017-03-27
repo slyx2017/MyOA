@@ -18,13 +18,13 @@ namespace ProductInventoryManageMent.ashx
             string param = context.Request.Params["param"];
             switch (param)
             {
-                case "adddept":
+                case "add":
                     AddDept(context);
                     break;
-                case "editdept":
-                    EditDept(context);
+                case "modify":
+                    ModifyDept(context);
                     break;
-                case "deldept":
+                case "del":
                     DelDept(context);
                     break;
                 default:
@@ -36,7 +36,7 @@ namespace ProductInventoryManageMent.ashx
         {
             context.Response.ContentType = "text/plain";
             string DeptTypeName = context.Request.Params["DeptTypeName"];
-            string sortNum = context.Request.Params["orderNum"];
+            int sortNum = int.Parse(context.Request.Params["orderNum"]);
 
             model.DeptName = DeptTypeName;
             model.SortNum = sortNum;
@@ -44,23 +44,49 @@ namespace ProductInventoryManageMent.ashx
             if (codeNum > 0)
             {
                 context.Response.Write("ok");
-                context.Response.End();
             }
             else
             {
                 context.Response.Write("no");
-                return;
             }
+            context.Response.End();
+        }
+        private void ModifyDept(HttpContext context)
+        {
+            context.Response.ContentType = "text/plain";
+            string DeptTypeName = context.Request.Params["DeptTypeName"];
+            int sortNum = int.Parse(context.Request.Params["orderNum"]);
+            int Id = int.Parse(context.Request.Params["ID"]);
+            model.ID = Id;
+            model.DeptName = DeptTypeName;
+            model.SortNum = sortNum;
+            int codeNum = bll.ModifyDept(model);
+            if (codeNum > 0)
+            {
+                context.Response.Write("ok");
+            }
+            else
+            {
+                context.Response.Write("no");
+            }
+            context.Response.End();
         }
         private void DelDept(HttpContext context)
         {
-            throw new NotImplementedException();
+            context.Response.ContentType = "text/plain";
+            int Id = int.Parse(context.Request.Params["ID"]);
+            int flag= bll.DeleteDept(Id);
+            if (flag>0)
+            {
+                context.Response.Write("ok");
+            }
+            else
+            {
+                context.Response.Write("no");
+            }
+            context.Response.End();
         }
         
-        private void EditDept(HttpContext context)
-        {
-            throw new NotImplementedException();
-        }
         public bool IsReusable
         {
             get

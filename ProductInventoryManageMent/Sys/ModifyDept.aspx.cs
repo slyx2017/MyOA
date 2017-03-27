@@ -1,7 +1,6 @@
 ﻿using ProductInventoryManagement.comm;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,8 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace ProductInventoryManageMent.Sys
 {
-    public partial class DeptList : BasePage
+    public partial class ModifyDept : BasePage
     {
+        public string Id = "";
+        BLL.DeptTypeBLL bll = new BLL.DeptTypeBLL();
+        public Model.DeptType model = new Model.DeptType();
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isSessionNull = SessionIsNull();
@@ -24,8 +26,8 @@ namespace ProductInventoryManageMent.Sys
                 bool isValide = ValidateUserPemiss(currenPath);
                 if (isValide)
                 {
-                    this.rpt_DeptList.DataSource = GetInfoDS();
-                    this.rpt_DeptList.DataBind();
+                    Id = Request.Params["Id"].ToString();
+                    GetDeptList();
                 }
                 else
                 {
@@ -33,26 +35,14 @@ namespace ProductInventoryManageMent.Sys
                 }
             }
         }
-        string strWhere = " 1=1 ";
         /// <summary>
-        /// 获取数据
+        /// 获取部门数据列表
         /// </summary>
         /// <returns></returns>
-        public DataSet GetInfoDS()
+        public void GetDeptList()
         {
-            BLL.DeptTypeBLL bll = new BLL.DeptTypeBLL();
-
-            DataSet ds = new DataSet();
-            strWhere += " order by SortNum ";
-            ds = bll.GetDeptList(strWhere);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                return ds;
-            }
-            else
-            {
-                return null;
-            }
+            int deptId = Convert.ToInt32(Id);
+            model = bll.GetModel(deptId);
         }
     }
 }

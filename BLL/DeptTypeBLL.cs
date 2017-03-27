@@ -21,7 +21,24 @@ namespace BLL
         {
             return dal.AddDeptType(model);
         }
-
+        /// <summary>
+        /// 修改部门
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public int ModifyDept(Model.DeptType model)
+        {
+            return dal.ModifyDept(model);
+        }
+        /// <summary>
+        /// 删除部门
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public int DeleteDept(int Id)
+        {
+            return dal.DeleteDept(Id);
+        }
         /// <summary>
         /// 获取部门数据列表
         /// </summary>
@@ -30,6 +47,13 @@ namespace BLL
         public DataSet GetDeptList(string strWhere)
         {
             return dal.GetDeptList(strWhere);
+        }
+        /// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Model.DeptType GetModel(int ID)
+        {
+            return dal.GetModel(ID);
         }
     }
 }

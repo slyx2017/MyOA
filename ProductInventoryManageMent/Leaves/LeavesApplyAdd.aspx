@@ -53,7 +53,7 @@
                     if (data == "ok") {
                         $('#content-body').html("操作成功！");
                         $('#myModal').modal('toggle');
-                        window.location.href = "Hols.aspx";
+                        window.location.href = "LeavesApplyList.aspx";
                     }
                     else {
                         $('#content-body').html("操作失败！");

@@ -257,6 +257,7 @@
     <Content Include="Leaves\LeavesApplyList.aspx" />
     <Content Include="Leaves\LeavesDisposeList.aspx" />
     <Content Include="Leaves\LeavesApplyModify.aspx" />
+    <Content Include="Sys\ModifyDept.aspx" />
     <Content Include="User\EditUser.aspx" />
     <Content Include="User\ModifyPwd.aspx" />
     <Content Include="User\UserAdd.aspx" />
@@ -539,6 +540,13 @@
     </Compile>
     <Compile Include="Leaves\LeavesApplyModify.aspx.designer.cs">
       <DependentUpon>LeavesApplyModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\ModifyDept.aspx.cs">
+      <DependentUpon>ModifyDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\ModifyDept.aspx.designer.cs">
+      <DependentUpon>ModifyDept.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>

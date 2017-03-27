@@ -16,7 +16,7 @@ namespace Model
         #region Model
         private int? _id;
         private string _deptname;
-        private string _sortnum;
+        private int? _sortnum;
 
         /// <summary>
 		/// 
@@ -35,7 +35,7 @@ namespace Model
             get { return _deptname; }
         }
 
-        public string SortNum
+        public int? SortNum
         {
             get { return _sortnum;}
             set{ _sortnum = value;}
